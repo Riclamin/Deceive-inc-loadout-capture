@@ -1,0 +1,14 @@
+AgentLoadoutFull = agent, w#, e#, p#, g1, g2, All chips names
+AgentLoadoutShort = agent, w#, e#, p#, g1, g2
+All Chip names = grey, green, blue, purple, gold
+Agent:
+Weapon: tooltip incl numbers
+Expertise: tooltip incl numbers
+Passive: tooltip incl numbers
+Gadget1: tooltip incl numbers
+Gadget2: tooltip incl numbers
+Grey: tooltip incl numbers
+Green: tooltip incl numbers
+Blue: tooltip incl numbers
+Purple: tooltip incl numbers
+Gold tooltip incl numbers

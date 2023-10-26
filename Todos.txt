@@ -1,0 +1,10 @@
+TODOS:
+- Tooltip contents + numbers for all weapons / expertises / passives / chips / gadgets
+- Write backend for twitch extension server hosting
+- add customisable hotkeys
+- create gui?
+- add notification that capture succeeded?
+
+Maybe:
+- Add support for disguise tier + extra info. 
+V chatbot integration (Firebot?)
