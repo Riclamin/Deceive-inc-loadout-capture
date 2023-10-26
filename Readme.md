@@ -4,6 +4,7 @@ Install the required libraries using command:
 - pip install pyautogui pandas keyboard
 
 Setup a chatbot to read the output file. A setup file is included for firebot: "Deceive loadout extension - firebot integration", which can be imported through settings > setups > import setup.
+Make sure to update the path to the CurrentLoadout.txt file in the readfile effects for all of the commands. You can do this easily by opening the file with notepad or any other text edit program and replace all instances of "{Location of the Deceive Inc Local Screen Capture Folder}" with the actual path to the folder e.g. "C:\User\Documents\SomeFolder\Deceive inc loadout capture\".
 
 How to use:
 
