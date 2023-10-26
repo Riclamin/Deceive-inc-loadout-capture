@@ -149,20 +149,6 @@ def export_to_text_file(loadout: dict):
     loadoutLines.append(f'{UpgradeChipStatsDF.at[loadout["UpgradePurple"], "Purple"]}\n')
     loadoutLines.append(f'{UpgradeChipStatsDF.at[loadout["UpgradeGold"], "Gold"]}\n')
 
-
-
-    # loadoutLines.append(f'{AgentStatsDF.loc[AgentStatsDF["Agent"]== loadout["Agent"], [loadout["Weapon"]]]}\n')
-    # loadoutLines.append(f'{AgentStatsDF.loc[AgentStatsDF["Agent"]== loadout["Agent"], [loadout["Expertise"]]]}\n')
-    # loadoutLines.append(f'{AgentStatsDF.loc[AgentStatsDF["Agent"]== loadout["Agent"], [loadout["Passive"]]]}\n')
-    # loadoutLines.append(f'{GadgetStatsDF.loc[GadgetStatsDF["Gadget"] == loadout["Gadget1"], ["Stats"]]}\n')
-    # loadoutLines.append(f'{GadgetStatsDF.loc[GadgetStatsDF["Gadget"] == loadout["Gadget2"], ["Stats"]]}\n')
-    # loadoutLines.append(f'{UpgradeChipStatsDF.loc[(UpgradeChipStatsDF["Type"]== loadout["UpgradeGrey"]) & (UpgradeChipStatsDF["Tier"] =="Grey"), ["Stats"]]}\n')
-    # loadoutLines.append(f'{UpgradeChipStatsDF.loc[(UpgradeChipStatsDF["Type"]== loadout["UpgradeGreen"])& (UpgradeChipStatsDF["Tier"] =="Green"), ["Stats"]]}\n')
-    # loadoutLines.append(f'{UpgradeChipStatsDF.loc[(UpgradeChipStatsDF["Type"]== loadout["UpgradeBlue"])& (UpgradeChipStatsDF["Tier"] =="Blue"), ["Stats"]]}\n')
-    # loadoutLines.append(f'{UpgradeChipStatsDF.loc[(UpgradeChipStatsDF["Type"]== loadout["UpgradePurple"])& (UpgradeChipStatsDF["Tier"] =="Purple"), ["Stats"]]}\n')
-    # loadoutLines.append(f'{UpgradeChipStatsDF.loc[(UpgradeChipStatsDF["Type"]== loadout["UpgradeGold"])& (UpgradeChipStatsDF["Tier"] =="Gold"), ["Stats"]]}\n')
-
-
     with open(f'{localDirectory}\\CurrentLoadout.txt', "w+") as loadoutFile:
         loadoutFile.writelines(loadoutLines)
 
