@@ -8,7 +8,7 @@ Make sure to update the path to the CurrentLoadout.txt file in the readfile effe
 
 How to use:
 
-Run the script. During agent select, whenever you use a new build, make sure that you select the agent's class before (vanguard/tracker/disruptor/scoundrel) pressing ctrl+u to have the plugin analyse it. Otherwise it might not detect your weapon/expertise/passvie. It will screenshot your current screen and determine your loadout. This can take up to about 10 seconds, but you can do other stuff in the mean time. It will then export this loadout to the file "CurrentLoadout.txt". A bot can read from this file so that the information can be exported in chat through a chatbot for example.
+Run the script "main.py". During agent select, whenever you use a new build, make sure that you select the agent's class before (vanguard/tracker/disruptor/scoundrel) pressing ctrl+u to have the plugin analyse it. Otherwise it might not detect your weapon/expertise/passvie. It will screenshot your current screen and determine your loadout. This can take up to about 10 seconds, but you can do other stuff in the mean time. It will then export this loadout to the file "CurrentLoadout.txt". A bot can read from this file so that the information can be exported in chat through a chatbot for example.
 
 Future additions:
 - Add twitch overlay support such that viewers can just hover over your abilities to show the tooltips instead of having to use chat commands.
