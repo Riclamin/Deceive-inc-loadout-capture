@@ -1,5 +1,4 @@
 TODOS:
-- Tooltip contents + numbers for all weapons / expertises / passives / chips / gadgets
 - Write backend for twitch extension server hosting
 - add customisable hotkeys
 - create gui?
