@@ -3,9 +3,9 @@ import pyautogui, time, keyboard, pandas, os
 pyautogui.FAILSAFE = True
 
 localDirectory = os.getcwd()
-AgentStatsDF = pandas.read_csv(f'{localDirectory}\AgentLoadoutStats.csv', index_col=0, names=["Agent","w1","w2","w3","e1","e2","e3","p1","p2","p3"])
-GadgetStatsDF = pandas.read_csv(f'{localDirectory}\GadgetStats.csv', index_col=0, names=["Gadget","Stats"])
-UpgradeChipStatsDF = pandas.read_csv(f'{localDirectory}\\UpgradeChipStats.csv', index_col=0,names=["Type","Grey", "Green", "Blue", "Purple", "Gold"])
+AgentStatsDF = pandas.read_csv(f'{localDirectory}\Stats\AgentLoadoutStats.csv', index_col=0, names=["Agent","w1","w2","w3","e1","e2","e3","p1","p2","p3"])
+GadgetStatsDF = pandas.read_csv(f'{localDirectory}\Stats\GadgetStats.csv', index_col=0, names=["Gadget","Stats"])
+UpgradeChipStatsDF = pandas.read_csv(f'{localDirectory}\Stats\\UpgradeChipStats.csv', index_col=0,names=["Type","Grey", "Green", "Blue", "Purple", "Gold"])
 
 
 
