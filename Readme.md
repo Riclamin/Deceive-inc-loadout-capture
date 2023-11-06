@@ -5,8 +5,9 @@ Preparation:
     - pyautogui is used to capture the screen.
     - pandas is used to easily read the csv files that contain the information.
     - keyboard is to listen to keybinds.
-3. Setup a chatbot to read the output file. A setup file is included for firebot (https://firebot.app): "Deceive loadout extension - firebot integration", which can be imported through settings > setups > import setup. During the import of the setup file, you will be asked to give the filepath to the directory where this file is located as well. e.g. C:\Users\User\Documents\Deceive-Inc-Loadout-Capture. 
-- If you're not using Firebot, there is a templateLoadoutFile included that explains shortly on which line of the "CurrentLoadout.txt" file each of the information will be exported.
+3. Setup a chatbot to read the output file. 
+    - A setup file is included for firebot (https://firebot.app): "Deceive loadout extension - firebot integration", which can be imported through `settings > setups > import setup`. During the import of the setup file, you will be asked to give the filepath to the directory where this file is located as well. e.g. C:\Users\User\Documents\Deceive-Inc-Loadout-Capture. If you've already imported a previous version of the setup, I advise to first remove this setup through `settings > setups > remove setup` before importing the new one. 
+    - If you're not using Firebot, there is a templateLoadoutFile included that explains shortly on which line of the "CurrentLoadout.txt" file each of the information will be exported.
 
 How to use:
 
