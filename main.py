@@ -1,21 +1,24 @@
-import pyautogui, time, keyboard, pandas, os
+import pyautogui, time, keyboard, pandas, os, random
 
 pyautogui.FAILSAFE = True
 
 localDirectory = os.getcwd()
-AgentStatsDF = pandas.read_csv(f'{localDirectory}\Stats\AgentLoadoutStats.csv', index_col=0, names=["Agent","w1","w2","w3","e1","e2","e3","p1","p2","p3"])
-GadgetStatsDF = pandas.read_csv(f'{localDirectory}\Stats\GadgetStats.csv', index_col=0, names=["Gadget","Stats"])
-UpgradeChipStatsDF = pandas.read_csv(f'{localDirectory}\Stats\\UpgradeChipStats.csv', index_col=0,names=["Type","Grey", "Green", "Blue", "Purple", "Gold"])
+AgentStatsDF = pandas.read_csv(f'{localDirectory}\Stats\AgentLoadoutStats.csv', index_col=0, names=["Agent","w1","w2","w3","e1","e2","e3","p1","p2","p3"], sep=';')
+GadgetStatsDF = pandas.read_csv(f'{localDirectory}\Stats\GadgetStats.csv', index_col=0, names=["Gadget","Stats"], sep = ';')
+UpgradeChipStatsDF = pandas.read_csv(f'{localDirectory}\Stats\\UpgradeChipStats.csv', index_col=0,names=["Type","Grey", "Green", "Blue", "Purple", "Gold"], sep=';')
+DictionaryDF = pandas.read_csv(f'{localDirectory}\Stats\\Dictionary.csv', index_col=0,names=["Term","Explanation"], sep=';')
 
 
 
-Agents = {"Ace","Cavaliere", "Chavez", "Hans", "Larcin", "Madame Xiu", "Octo", "Red", "Sasori", "Squire", "Yu-Mi"}
-Weapons = {"w1", "w2", "w3"}
-Expertises = {"e1", "e2", "e3"}
-Passives = {"p1", "p2", "p3"}
-Gadgets = {"Bounce pad", "Goopod", "Hacktrap", "HoloMimic", "ReconDrone", "Scrambler", "ShieldBrella", "SpyGlass", "TripWire", "Turret"}
-UpgradeTiers = {"Grey", "Green", "Blue", "Purple", "Gold"}
-UpgradeChips = {"Cover Accelerator", "Extended Ammo Pouch", "External Hard-Drive", "Overclock Chip", "Bulletproof Fabric", "Field Agent Kit", "Social Battery", "Nutritional Supplement", "Exfiltration Scanner"}
+Agents = ["Ace","Cavaliere", "Chavez", "Hans", "Larcin", "Madame Xiu", "Octo", "Red", "Sasori", "Squire", "Yu-Mi"]
+Weapons = ["w1", "w2", "w3"]
+Expertises = ["e1", "e2", "e3"]
+Passives = ["p1", "p2", "p3"]
+Gadgets = ["BounceMat", "GooPod", "HackTrap", "Holo-Mimic", "ReconDrone", "Scrambler", "Shield-Brella", "Spyglass", "Tripwire", "Turret"]
+UpgradeTiers = ["Grey", "Green", "Blue", "Purple", "Gold"]
+UpgradeChips = ["Cover Accelerator", "Extended Ammo Pouch", "External Hard-Drive", "Overclock Chip", "Bulletproof Fabric", "Field Agent Kit", "Social Battery", "Nutritional Supplement", "Exfiltration Scanner"]
+Dictionary = ["Wx", "Ex", "Px", "Chip","Perk", "Upgrade", "Scan", "Wallhacks", "Vulnerable", "Traced", "Revealed", "Broadcast", "Exposed", "Neutralized", "Charmed", "Heartbroken", "Invisible", "AmpedUp", "Invulnerable", "Resistant", "Extract", "Secret Exits"]
+
 
 def on_ctrl_u():
     screenshot = pyautogui.screenshot()
@@ -26,8 +29,51 @@ def on_ctrl_u():
     loadout = lookup_gadgets(screenshot, loadout)
     loadout = lookup_chips(screenshot, loadout)
     loadout = lookup_agent_loadout(screenshot, loadout)
-    export_to_text_file(loadout)
+    export_loadout_to_text_file(loadout)
     #TODO: Notify user?
+
+def on_ctrl_i():
+    with open(f'{localDirectory}\\randomLoadout.txt', "w+") as randomFile:
+        randomFile.write(f'{random.choice(Agents)} w{random.randint(1,3)} e{random.randint(1,3)} p{random.randint(1,3)}, g: {random.sample(Gadgets,2)}, chips grey-gold: {random.sample(UpgradeChips,5)}')
+        randomFile.flush
+
+def on_ctrl_l():
+    args = []
+    with open(f'{localDirectory}\\DeceiveLookup.txt', "r") as lookupFile:
+        args = lookupFile.readline().split()
+    
+    result = ''
+    if args[0] == 'Agents':
+        result = f'Agents available are: {Agents}'
+    elif args[0] == 'Gadgets':
+        result = f'Gadgets available are: {Gadgets}'
+    elif args[0] == 'Chips':
+        result = f'Chip names are: {UpgradeChips}'
+    elif args[0] == 'Dictionary':
+        result = f'Dictionary terms are: {Dictionary}'
+
+    elif args[0] in Agents:
+        if args[1] in Weapons or args[1] in Expertises or args[1] in Passives: 
+            result = f"{args[0]}'s {args[1]} has the following info: {AgentStatsDF.at[args[0], args[1]]}"
+
+    elif args[0] in Gadgets:
+        result = f"{args[0]} has the following info: {GadgetStatsDF.at[args[0], 'Stats']}"
+
+    elif args[0] in UpgradeTiers:
+        if args[1] in UpgradeChips:
+            result = f"A {args[0]} {args[1]} chip has the following info: {UpgradeChipStatsDF.at[args[1], args[0]]}"
+
+    elif args[0] in Dictionary:
+        result = f'Definition for {args[0]}: {DictionaryDF.at[args[0], "Explanation"]}'
+    
+    elif result == '':
+        result = 'Did not recognise argument. Make sure to capitalise names. For a list of options use !DeceiveLookup Agents / !DeceiveLookup Gadgets / !DeceiveLookup Chips / !DeceiveLookup Dictionary'
+
+    with open(f'{localDirectory}\\DeceiveLookup.txt', "w+") as lookupFile:
+        lookupFile.writelines([result])
+
+
+
 
 def lookup_gadgets(screenshot, loadout):
     #lookup gadgets.
@@ -126,7 +172,7 @@ def lookup_agent_loadout(screenshot, loadout):
     print(f'Agent = {loadout["Agent"]}, weapon = {loadout["Weapon"]}, expertise = {loadout["Expertise"]}, passive = {loadout["Passive"]}')
     return loadout
 
-def export_to_text_file(loadout: dict):
+def export_loadout_to_text_file(loadout: dict):
     print(loadout)
     for key in loadout:
         if loadout[key] is None:
@@ -155,6 +201,8 @@ def export_to_text_file(loadout: dict):
 
 keyboard.add_hotkey('ctrl+u', on_ctrl_u)
 keyboard.add_hotkey('ctrl+esc', exit)
+keyboard.add_hotkey('ctrl+i', on_ctrl_i)
+keyboard.add_hotkey('ctrl+l', on_ctrl_l)
 
 while True:
     keyboard.wait()

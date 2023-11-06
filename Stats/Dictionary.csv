@@ -1,0 +1,23 @@
+Term;Explanation
+Wx;Stands for Weapon. X stands for the in-game tier of the weapon. From top to bottom, W1, W2, W3.
+Ex;Stands for Expertise. X stands for the in-game tier of the Expertise. From top to bottom, E1, E2, E3.
+Px;Stands for Passive. X stands for the in-game tier of the Passive. From top to bottom, P1, P2, P3.
+Chip;Synonyms: Perk, Upgrade. Give the user a buff on pickup until the end of game or when the upgrade is stolen by Larcin. Is usually paired with the rarity/color of the field upgrade they are referring to. For example, grey upgrade refers to an uncommon field upgrade and gold perk refers to a legendary field upgrade.
+Perk;Synonyms: Chip, Upgrade. Give the user a buff on pickup until the end of game or when the upgrade is stolen by Larcin. Is usually paired with the rarity/color of the field upgrade they are referring to. For example, grey upgrade refers to an uncommon field upgrade and gold perk refers to a legendary field upgrade.
+Upgrade;Synonyms: Chip, Perk. Give the user a buff on pickup until the end of game or when the upgrade is stolen by Larcin. Is usually paired with the rarity/color of the field upgrade they are referring to. For example, grey upgrade refers to an uncommon field upgrade and gold perk refers to a legendary field upgrade.
+Scan;The ability of the briefcase holder to see enemy agents through walls. Estimated range for this ability is 100m.
+Wallhacks;Usually referring to 'Scan'. Could also refer to cheats that allow someone to see and/or shoot through walls.
+Vulnerable;Amplifies damage taken by all sources by 30%. Lasts for 25 seconds. Note: it is sometimes referred to as 'Vuln'. Applied by: Ace's E2/heartbroken. 
+Traced;The player that applied the status effect is able to see the traced player COVERED (if they're in cover, otherwise not), in a red silhouette and through walls. Applied by: Recon Drone, Hacktraps, Cavalière's expertises (E1, E2 and E3) and Squire's P2.
+Revealed;Is completely identical to traced, except it does not have a duration: it is based on a toggle mechanic. Applied by: the briefcase holder's ability. 
+Broadcast;Regularly pings the player's position for everyone on the map, without showing aura, cover, agent, etc. Applied by: Briefcase Room (if not disguised as a VIP)
+Exposed;Prevents the player from getting their cover back. Note: cover drain and cover break do not apply exposed, but respectively slowly drain your cover and break it ont he spot. Applied by: Yu-Mi's E1 and E3, Ace's P3 and the Briefcase Room (if not disguised as a VIP), Octo'/s E3 if rival is out of cover, and reaching lvl 3 heat. 
+Neutralized;It prevents the player from using their expertise. Applied by: Hans' E1 and E3, Octo'/s E3 if rival is out of cover.
+Charmed;Restores cover to Rivals and applies this status. If a rival breaks their cover while charmed they become heartbroken. Applied by: Red E1 and E3. 
+Heartbroken;Applies Neutralized and Vulnerable. Applied by: Red E1 and E3.
+Invisible;Renders the user completely invisble and immune to detection and damage by any means. Applied by: Larcin's expertises (E1, E2, E3).
+AmpedUp;Increases movement speed. (Squire E2 increases reload speed as well.) Applied by: Squire E2 & P1, Larcin E1 & E3 and Cavaliére's P2.
+Invulnerable;Renders user completely immune to damage from all sources. Applied by: Chavez E1 & E3. 
+Resistant;Reduces incoming damage by 50%. Applied by: Chavez E2 and Squire P3.
+Extract;Refers to an extraction point, which can be either A, B or C.
+Secret Exits;Refers to an alternative exit present in most terminal rooms, opened by interacting with specific objects within the room.
