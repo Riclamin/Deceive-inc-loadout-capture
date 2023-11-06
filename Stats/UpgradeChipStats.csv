@@ -1,11 +1,11 @@
-Type;Grey;Green;Blue;Purple;Gold
-Cover Accelerator;Cover recovery is increased by 25%;Cover recovery is increased by 35%;Cover recovery is increased by 50%;Cover recovery is increased by 60%;Cover recovery is increased by 70%
-Extended Ammo Pouch;Increases ammo capacity by 30%;Increases ammo capacity by 40%;Increases ammo capacity by 60%;Increases ammo capacity by 80%;Increases ammo capacity by 100%
-External Hard-Drive;increases max intel capcity by 20%;increases max intel capcity by 40%;increases max intel capcity by 60%;increases max intel capcity by 80%;increases max intel capcity by 100%
-Overclock Chip;increases hacking speed by 25%;increases hacking speed by 30%;increases hacking speed by 40%;increases hacking speed by 50%;increases hacking speed by 60%
-Bulletproof Fabric;Increases max hp by 5%;Increases max hp by 8%;Increases max hp by 10%;Increases max hp by 12%;Increases max hp by 15%
-Field Agent Kit;increases Expertise recovery rate by 15%;increases Expertise recovery rate by 20%;increases Expertise recovery rate by 25%;increases Expertise recovery rate by 35%;increases Expertise recovery rate by 50%
-Social Battery;Heals you for 1hp/s in social interactions;Heals you for 2hp/s in social interactions;Heals you for 3hp/s in social interactions;Heals you for 5hp/s in social interactions;Heals you for 7hp/s in social interactions
-Nutritional Supplement;Eating food recovers 50(49)% more hp;Eating food recovers 75% more hp;Eating food recovers 100% more hp;Eating food recovers 150% more hp;Eating food recovers 250% more hp
-Exfiltration Scanner;Reduces intel drain rate using package scan by 20%;Reduces intel drain rate using package scan by 25%;Reduces intel drain rate using package scan by 30%;Reduces intel drain rate using package scan by 40%;Reduces intel drain rate using package scan by 50%
-BACKUP_IN_CASE_OF_ERROR;x;x;x;x;x
+Type;Grey;Green;Blue;Purple;Gold;x
+Cover Accelerator;Cover recovery is increased by 25%;Cover recovery is increased by 35%;Cover recovery is increased by 50%;Cover recovery is increased by 60%;Cover recovery is increased by 70%;x
+Extended Ammo Pouch;Increases ammo capacity by 30%;Increases ammo capacity by 40%;Increases ammo capacity by 60%;Increases ammo capacity by 80%;Increases ammo capacity by 100%;x
+External Hard-Drive;increases max intel capcity by 20%;increases max intel capcity by 40%;increases max intel capcity by 60%;increases max intel capcity by 80%;increases max intel capcity by 100%;x
+Overclock Chip;increases hacking speed by 25%;increases hacking speed by 30%;increases hacking speed by 40%;increases hacking speed by 50%;increases hacking speed by 60%;x
+Bulletproof Fabric;Increases max hp by 5%;Increases max hp by 8%;Increases max hp by 10%;Increases max hp by 12%;Increases max hp by 15%;x
+Field Agent Kit;increases Expertise recovery rate by 15%;increases Expertise recovery rate by 20%;increases Expertise recovery rate by 25%;increases Expertise recovery rate by 35%;increases Expertise recovery rate by 50%;x
+Social Battery;Heals you for 1hp/s in social interactions;Heals you for 2hp/s in social interactions;Heals you for 3hp/s in social interactions;Heals you for 5hp/s in social interactions;Heals you for 7hp/s in social interactions;x
+Nutritional Supplement;Eating food recovers 50(49)% more hp;Eating food recovers 75% more hp;Eating food recovers 100% more hp;Eating food recovers 150% more hp;Eating food recovers 250% more hp;x
+Exfiltration Scanner;Reduces intel drain rate using package scan by 20%;Reduces intel drain rate using package scan by 25%;Reduces intel drain rate using package scan by 30%;Reduces intel drain rate using package scan by 40%;Reduces intel drain rate using package scan by 50%;x
+x;x;x;x;x;x;x

@@ -1,11 +1,11 @@
-import pyautogui, time, keyboard, pandas, os, random
+import pyautogui, keyboard, pandas, os, random
 
 pyautogui.FAILSAFE = True
 
 localDirectory = os.getcwd()
-AgentStatsDF = pandas.read_csv(f'{localDirectory}\Stats\AgentLoadoutStats.csv', index_col=0, names=["Agent","w1","w2","w3","e1","e2","e3","p1","p2","p3"], sep=';')
-GadgetStatsDF = pandas.read_csv(f'{localDirectory}\Stats\GadgetStats.csv', index_col=0, names=["Gadget","Stats"], sep = ';')
-UpgradeChipStatsDF = pandas.read_csv(f'{localDirectory}\Stats\\UpgradeChipStats.csv', index_col=0,names=["Type","Grey", "Green", "Blue", "Purple", "Gold"], sep=';')
+AgentStatsDF = pandas.read_csv(f'{localDirectory}\Stats\AgentLoadoutStats.csv', index_col=0, names=["Agent","w1","w2","w3","e1","e2","e3","p1","p2","p3", "x"], sep=';')
+GadgetStatsDF = pandas.read_csv(f'{localDirectory}\Stats\GadgetStats.csv', index_col=0, names=["Gadget","Stats","x"], sep = ';')
+UpgradeChipStatsDF = pandas.read_csv(f'{localDirectory}\Stats\\UpgradeChipStats.csv', index_col=0,names=["Type","Grey", "Green", "Blue", "Purple", "Gold","x"], sep=';')
 DictionaryDF = pandas.read_csv(f'{localDirectory}\Stats\\Dictionary.csv', index_col=0,names=["Term","Explanation"], sep=';')
 
 
@@ -173,16 +173,18 @@ def lookup_agent_loadout(screenshot, loadout):
     return loadout
 
 def export_loadout_to_text_file(loadout: dict):
-    print(loadout)
+    # print(loadout) #Debugging
     for key in loadout:
         if loadout[key] is None:
-            loadout[key] = 'BACKUP_IN_CASE_OF_ERROR'
+            loadout[key] = 'x'
+
     
     loadoutLines = []
     loadoutLines.append(f'{loadout["Agent"]}: {loadout["Weapon"]} {loadout["Expertise"]} {loadout["Passive"]}, g1={loadout["Gadget1"]}, g2={loadout["Gadget2"]}, grey={loadout["UpgradeGrey"]}, green={loadout["UpgradeGreen"]}, blue={loadout["UpgradeBlue"]}, purple={loadout["UpgradePurple"]}, gold={loadout["UpgradeGold"]}\n') 
     loadoutLines.append(f'{loadout["Agent"]}: {loadout["Weapon"]} {loadout["Expertise"]} {loadout["Passive"]}, g1={loadout["Gadget1"]}, g2={loadout["Gadget2"]}\n') 
     loadoutLines.append(f'grey={loadout["UpgradeGrey"]}, green={loadout["UpgradeGreen"]}, blue={loadout["UpgradeBlue"]}, purple={loadout["UpgradePurple"]}, gold={loadout["UpgradeGold"]}\n')
     loadoutLines.append(f'{loadout["Agent"]}\n')
+
 
     loadoutLines.append(f'{AgentStatsDF.at[loadout["Agent"], loadout["Weapon"]]}\n')
     loadoutLines.append(f'{AgentStatsDF.at[loadout["Agent"], loadout["Expertise"]]}\n')
@@ -200,7 +202,6 @@ def export_loadout_to_text_file(loadout: dict):
 
 
 keyboard.add_hotkey('ctrl+u', on_ctrl_u)
-keyboard.add_hotkey('ctrl+esc', exit)
 keyboard.add_hotkey('ctrl+i', on_ctrl_i)
 keyboard.add_hotkey('ctrl+l', on_ctrl_l)
 
