@@ -30,3 +30,8 @@ Considering:
 - Add support for disguise tier + extra info. 
 - Replacing the screen capture with API calls, so that everything can be run in the cloud instead. Requires help from the game developer. 
 
+Versionfile(a.b.c.d) works as follows: 
+a. Major release
+b. Minor release
+c. Build version of minor release.
+d. Balance version. During development will be updated regularly until everything is up to date with the current patch. Afterward should update once per patch unless undocumented changes are found.
