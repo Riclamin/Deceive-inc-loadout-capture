@@ -1,6 +1,11 @@
 import pyautogui, keyboard, pandas, os, random
+from urllib.request import urlretrieve
 
 pyautogui.FAILSAFE = True
+
+with open("checkForUpdates.py") as f:
+    exec(f.read())
+
 
 localDirectory = os.getcwd()
 AgentStatsDF = pandas.read_csv(f'{localDirectory}\Stats\AgentLoadoutStats.csv', index_col=0, names=["Agent","w1","w2","w3","e1","e2","e3","p1","p2","p3", "x"], sep=';')
