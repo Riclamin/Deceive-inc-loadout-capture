@@ -1,3 +1,10 @@
+##0.3.1: 07 Nov 2023
+- Added functionality so that lookups do not need to be case sensitive anymore. Shorthand should also work, as long as it can uniquely identify one option from the list of agents/weapons/expertises/passives/gadgets/terms. examples:
+    - yumi works instead of Yu-Mi
+    - cav works instead of Cavaliere
+    - dr works for ReconDrone
+    - q works for Squire 
+
 
 ##0.3: 07 Nov 2023
 - Added version numbers

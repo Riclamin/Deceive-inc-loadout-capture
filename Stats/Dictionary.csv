@@ -21,4 +21,4 @@ Invulnerable;Renders user completely immune to damage from all sources. Applied 
 Resistant;Reduces incoming damage by 50%. Applied by: Chavez E2 and Squire P3.
 Extract;Refers to an extraction point, which can be either A, B or C.
 Secret Exits;Refers to an alternative exit present in most terminal rooms, opened by interacting with specific objects within the room.
-Heat;You gain heat for damaging civilians. Having level 1/2/3 heat will make it so you receive 30%/50%/100% bonus damage from all sources.
+Heat;You gain heat for damaging npcs. Having level 1/2/3 heat will make it so you receive 30%/50%/100% bonus damage from all sources.
