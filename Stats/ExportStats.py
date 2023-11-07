@@ -90,7 +90,7 @@ def RedStats():
     w3 = "HS 40, BS 40"
     e1 = "Red charms rivals for 8s in a cone in front of her and red regains her cover. Charmed rivals that break their own cover become heartbroken. cd = 45s."
     e2 = "You and your allies heal 20 hp and regain cover. cd = 60s."
-    e3 = "Place down a love bomb. Shooting the bomb denotates it, causing enemies within range to be slowed slowed for 40 % and become vulnerable for 30% for 8s. The bomb also automatically explodes aif out of cover rivals are in range. Red and her allies can interact with the bomb to regain cover."
+    e3 = "Place down a love bomb. Shooting the bomb denotates it, causing enemies within range to be slowed slowed for 40 % and become vulnerable for 35% for 8s. The bomb also automatically explodes aif out of cover rivals are in range. Red and her allies can interact with the bomb to regain cover."
     p1 = "Whenever you regain cover, you regain another cver of the same security tier. Also gain resistance for a short while."
     p2 = "Whenever an agent is killed nearby, you gain amped up and increased cover recovery speed until you regain your cover."
     p3 = "Trace rivals in a large radius arround red whenever they are being scolded by npcs or gain heat."

@@ -17,7 +17,7 @@ Passives = ["p1", "p2", "p3"]
 Gadgets = ["BounceMat", "GooPod", "HackTrap", "Holo-Mimic", "ReconDrone", "Scrambler", "Shield-Brella", "Spyglass", "Tripwire", "Turret"]
 UpgradeTiers = ["Grey", "Green", "Blue", "Purple", "Gold"]
 UpgradeChips = ["Cover Accelerator", "Extended Ammo Pouch", "External Hard-Drive", "Overclock Chip", "Bulletproof Fabric", "Field Agent Kit", "Social Battery", "Nutritional Supplement", "Exfiltration Scanner"]
-Dictionary = ["Wx", "Ex", "Px", "Chip","Perk", "Upgrade", "Scan", "Wallhacks", "Vulnerable", "Traced", "Revealed", "Broadcast", "Exposed", "Neutralized", "Charmed", "Heartbroken", "Invisible", "AmpedUp", "Invulnerable", "Resistant", "Extract", "Secret Exits"]
+Dictionary = ["Wx", "Ex", "Px", "Chip","Perk", "Upgrade", "Scan", "Wallhacks", "Vulnerable", "Traced", "Revealed", "Broadcast", "Exposed", "Neutralized", "Charmed", "Heartbroken", "Invisible", "AmpedUp", "Invulnerable", "Resistant", "Extract", "Secret Exits", "Heat"]
 
 
 def on_ctrl_u():
@@ -38,12 +38,15 @@ def on_ctrl_i():
         randomFile.flush
 
 def on_ctrl_l():
+    print('ctrl+l')
     args = []
     with open(f'{localDirectory}\\DeceiveLookup.txt', "r") as lookupFile:
         args = lookupFile.readline().split()
     
     result = ''
-    if args[0] == 'Agents':
+    if len(args) == 0:
+        result = 'For a list of options use !DeceiveLookup Agents / !DeceiveLookup Gadgets / !DeceiveLookup Chips / !DeceiveLookup Dictionary'
+    elif args[0] == 'Agents':
         result = f'Agents available are: {Agents}'
     elif args[0] == 'Gadgets':
         result = f'Gadgets available are: {Gadgets}'
@@ -173,7 +176,7 @@ def lookup_agent_loadout(screenshot, loadout):
     return loadout
 
 def export_loadout_to_text_file(loadout: dict):
-    # print(loadout) #Debugging
+    print(loadout) #Debugging
     for key in loadout:
         if loadout[key] is None:
             loadout[key] = 'x'

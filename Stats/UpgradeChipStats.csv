@@ -6,6 +6,6 @@ Overclock Chip;increases hacking speed by 25%;increases hacking speed by 30%;inc
 Bulletproof Fabric;Increases max hp by 5%;Increases max hp by 8%;Increases max hp by 10%;Increases max hp by 12%;Increases max hp by 15%;x
 Field Agent Kit;increases Expertise recovery rate by 15%;increases Expertise recovery rate by 20%;increases Expertise recovery rate by 25%;increases Expertise recovery rate by 35%;increases Expertise recovery rate by 50%;x
 Social Battery;Heals you for 1hp/s in social interactions;Heals you for 2hp/s in social interactions;Heals you for 3hp/s in social interactions;Heals you for 5hp/s in social interactions;Heals you for 7hp/s in social interactions;x
-Nutritional Supplement;Eating food recovers 50(49)% more hp;Eating food recovers 75% more hp;Eating food recovers 100% more hp;Eating food recovers 150% more hp;Eating food recovers 250% more hp;x
+Nutritional Supplement;Eating food recovers 50(actually 40)% more hp;Eating food recovers 75% more hp;Eating food recovers 100% more hp;Eating food recovers 150% more hp;Eating food recovers 250(actually 200)% more hp;x
 Exfiltration Scanner;Reduces intel drain rate using package scan by 20%;Reduces intel drain rate using package scan by 25%;Reduces intel drain rate using package scan by 30%;Reduces intel drain rate using package scan by 40%;Reduces intel drain rate using package scan by 50%;x
 x;x;x;x;x;x;x
