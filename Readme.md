@@ -1,4 +1,4 @@
-Preparation:
+##Preparation:
 1. Make sure to have python installed on your pc. Can be downloaded from: https://www.python.org/downloads/
 2. Install the required libraries using command:
     - `pip install pyautogui pandas keyboard`
@@ -9,7 +9,7 @@ Preparation:
     - A setup file is included for firebot (https://firebot.app): "Deceive loadout extension - firebot integration", which can be imported through `settings > setups > import setup`. During the import of the setup file, you will be asked to give the filepath to the directory where this file is located as well. e.g. C:\Users\User\Documents\Deceive-Inc-Loadout-Capture. If you've already imported a previous version of the setup, I advise to first remove this setup through `settings > setups > remove setup` before importing the new one. 
     - If you're not using Firebot, there is a templateLoadoutFile included that explains shortly on which line of the "CurrentLoadout.txt" file each of the information will be exported.
 
-How to use:
+##How to use:
 
 1. Open Windows powershell or Commandprompt in the current directory, which can be done by shift-rightclicking the background in the directory and run:
     - `& python main.py`
@@ -20,17 +20,19 @@ How to use:
     - ctrl+l (lowercase L) to do a lookup for a specific ability. The Firebot setup has a command !DeceiveLookup that uses this keybind to read from the "DeceiveLookup.txt" file. It will try to determine what is being asked and output the result back into the file. The same file can then be read again by the chatbot to output the response into chat. 
 4. To stop the script, go to the powershell / commandprompt window and press ctrl+c to stop the script.
 
+___
 
-
-Future additions:
+##Future additions:
 - Add twitch overlay support such that viewers can just hover over your abilities to show the tooltips instead of having to use chat commands.
 - add customisable hotkeys for capture.
 
-Considering:
+###Considering:
 - Add support for disguise tier + extra info. 
 - Replacing the screen capture with API calls, so that everything can be run in the cloud instead. Requires help from the game developer. 
 
-Versionfile(a.b.c.d) works as follows: 
+___
+
+##Versionfile(a.b.c.d) works as follows: 
 a. Major release
 b. Minor release
 c. Build version of minor release.

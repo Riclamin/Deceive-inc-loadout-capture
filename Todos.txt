@@ -3,6 +3,7 @@ TODOS:
 - add customisable hotkeys
 - create gui?
 - add notification that capture succeeded?
+- add recognition for both upper and lowercase in queries.
 
 Maybe:
 - Add support for disguise tier + extra info. 
