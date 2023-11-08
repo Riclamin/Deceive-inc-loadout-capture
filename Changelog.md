@@ -1,3 +1,7 @@
+## 0.3.3.3: 08 Nov 2023
+- Fixed a bug where the dynamically read lists would include the backup values. Upon analysing the current loadout, this would result in the script trying to read files that did not exist.
+- optimised a small section of code that minimised the names for easier comparison.
+
 ## 0.3.2.3: 08 Nov 2023
 - made it so that the options list is dynamically read from the stats files instead of keeping track of the options in two separate places.
 

@@ -15,14 +15,14 @@ DictionaryDF = pandas.read_csv(f'{localDirectory}\Stats\\Dictionary.csv', index_
 
 
 
-Agents = AgentStatsDF.index.values.tolist()[1:] 
+Agents = AgentStatsDF.index.values.tolist()[1:-2] 
 Weapons = ["w1", "w2", "w3"]
 Expertises = ["e1", "e2", "e3"]
 Passives = ["p1", "p2", "p3"]
-Gadgets = GadgetStatsDF.index.values.tolist()[1:] 
+Gadgets = GadgetStatsDF.index.values.tolist()[1:-2] 
 UpgradeTiers = ["Grey", "Green", "Blue", "Purple", "Gold"]
-UpgradeChips = UpgradeChipStatsDF.index.values.tolist()[1:] 
-Dictionary = DictionaryDF.index.values.tolist()[1:] 
+UpgradeChips = UpgradeChipStatsDF.index.values.tolist()[1:-2] 
+Dictionary = DictionaryDF.index.values.tolist()[1:-2] 
 
 
 def on_ctrl_u():
@@ -70,7 +70,7 @@ def on_ctrl_l():
         Passive = determine_likeness(args[1], Passives)
         chipName = determine_likeness(args[1], UpgradeChips)
 
-    print(f'{Agent}, {Gadget}, {chipTier}, {Term}, {Weapon}, {Expertise}, {Passive}, {chipName}')
+    # print(f'{Agent}, {Gadget}, {chipTier}, {Term}, {Weapon}, {Expertise}, {Passive}, {chipName}')
 
     result = ''
     if len(args) == 0:
@@ -94,7 +94,7 @@ def on_ctrl_l():
             write_lookup_to_file(result)
             return
 
-        # possbile more than one argument
+        # possibly more than one argument
 
         if Agent is not None and ((Weapon is not None) or (Expertise is not None) or (Passive is not None)):
             arg1 =''
@@ -130,11 +130,7 @@ def determine_likeness(name, options):
 
 
 def minimise_name(name: str):
-    name = name.replace(' ', '')
-    name = name.replace('-', '')
-    name = name.lower()
-    return name
-
+    return name.replace(' ', '').replace('-', '').lower()
 
 
 def lookup_gadgets(screenshot, loadout):
