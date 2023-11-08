@@ -22,3 +22,5 @@ Resistant;Reduces incoming damage by 50%. Applied by: Chavez E2 and Squire P3.
 Extract;Refers to an extraction point, which can be either A, B or C.
 Secret Exits;Refers to an alternative exit present in most terminal rooms, opened by interacting with specific objects within the room.
 Heat;You gain heat for damaging npcs. Having level 1/2/3 heat will make it so you receive 30%/50%/100% bonus damage from all sources.
+Snapshot;Upon triggering a hacktrap, you leave a snapshot of the agent your playing and your location for about 10s. This snapshot is visible to the trapper, the victim and both their teams.
+Echo;Similar to Snapshot, except it is only visible to Madame Xiu players that run passive 3. 

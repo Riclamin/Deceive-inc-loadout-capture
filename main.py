@@ -10,19 +10,19 @@ with open("checkForUpdates.py") as f:
 localDirectory = os.getcwd()
 AgentStatsDF = pandas.read_csv(f'{localDirectory}\Stats\AgentLoadoutStats.csv', index_col=0, names=["Agent","w1","w2","w3","e1","e2","e3","p1","p2","p3", "x"], sep=';')
 GadgetStatsDF = pandas.read_csv(f'{localDirectory}\Stats\GadgetStats.csv', index_col=0, names=["Gadget","Stats","x"], sep = ';')
-UpgradeChipStatsDF = pandas.read_csv(f'{localDirectory}\Stats\\UpgradeChipStats.csv', index_col=0,names=["Type","Grey", "Green", "Blue", "Purple", "Gold","x"], sep=';')
-DictionaryDF = pandas.read_csv(f'{localDirectory}\Stats\\Dictionary.csv', index_col=0,names=["Term","Explanation"], sep=';')
+UpgradeChipStatsDF = pandas.read_csv(f'{localDirectory}\Stats\\UpgradeChipStats.csv', index_col=0, names=["Type","Grey", "Green", "Blue", "Purple", "Gold","x"], sep=';')
+DictionaryDF = pandas.read_csv(f'{localDirectory}\Stats\\Dictionary.csv', index_col=0, names=["Term","Explanation"], sep=';')
 
 
 
-Agents = ["Ace","Cavaliere", "Chavez", "Hans", "Larcin", "Madame Xiu", "Octo", "Red", "Sasori", "Squire", "Yu-Mi"]
+Agents = AgentStatsDF.index.values.tolist()[1:] 
 Weapons = ["w1", "w2", "w3"]
 Expertises = ["e1", "e2", "e3"]
 Passives = ["p1", "p2", "p3"]
-Gadgets = ["BounceMat", "GooPod", "HackTrap", "Holo-Mimic", "ReconDrone", "Scrambler", "Shield-Brella", "Spyglass", "Tripwire", "Turret"]
+Gadgets = GadgetStatsDF.index.values.tolist()[1:] 
 UpgradeTiers = ["Grey", "Green", "Blue", "Purple", "Gold"]
-UpgradeChips = ["Cover Accelerator", "Extended Ammo Pouch", "External Hard-Drive", "Overclock Chip", "Bulletproof Fabric", "Field Agent Kit", "Social Battery", "Nutritional Supplement", "Exfiltration Scanner"]
-Dictionary = ["Wx", "Ex", "Px", "Chip","Perk", "Upgrade", "Scan", "Wallhacks", "Vulnerable", "Traced", "Revealed", "Broadcast", "Exposed", "Neutralized", "Charmed", "Heartbroken", "Invisible", "AmpedUp", "Invulnerable", "Resistant", "Extract", "Secret Exits", "Heat"]
+UpgradeChips = UpgradeChipStatsDF.index.values.tolist()[1:] 
+Dictionary = DictionaryDF.index.values.tolist()[1:] 
 
 
 def on_ctrl_u():

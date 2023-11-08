@@ -1,4 +1,11 @@
-##0.3.1: 07 Nov 2023
+## 0.3.2.3: 08 Nov 2023
+- made it so that the options list is dynamically read from the stats files instead of keeping track of the options in two separate places.
+
+### Balance changes:
+- Added Snapshot (from hacktrap) and Echo (Xiu p3) to the Dictionary.
+
+
+## 0.3.1: 07 Nov 2023
 - Added functionality so that lookups do not need to be case sensitive anymore. Shorthand should also work, as long as it can uniquely identify one option from the list of agents/weapons/expertises/passives/gadgets/terms. examples:
     - yumi works instead of Yu-Mi
     - cav works instead of Cavaliere
@@ -6,7 +13,7 @@
     - q works for Squire 
 
 
-##0.3: 07 Nov 2023
+## 0.3: 07 Nov 2023
 - Added version numbers
 - Added a second script to automatically check for Balance updates (and download them if they exist) on startup. This script is automatically run on startup of `main.py`. This will also notify the user of a Major, Minor, Build, and Balance updates in the terminal window.
     - A Major update means a significant change or large feature that was added. e.g. once the twitch overlay is working the version would probably switch to 1.x
@@ -16,8 +23,9 @@
 - Added changelog
 - removed streamfiles (temp files for bot) from directory and added to `.gitignore`.
 
+___
 
-##0.2: 05 Nov 2023
+## 0.2: 05 Nov 2023
 - Added option to lookup information on loadouts that are not in use right now, as well as status effects, and other terms.
 - Collapsed Loadout commands from 0.1 into a single firebot command called !loadout.
 - Added option !loadout command to generate random loadouts, which can be used for challenge runs.
@@ -25,8 +33,9 @@
 - Updated Firebot setup file to be much easier to install.
 - Many bug fixes.
 
+___
 
-##0.1: 27 Oct 2023
+## 0.1: 27 Oct 2023
 This is the initial release of application on github.
 - Can be used to capture loadout of deceive inc by using ctrl u while it is running.
 - included firebot setup file as a chatbot to read the output from the python script since the overlay part is going to take a long time to do.
