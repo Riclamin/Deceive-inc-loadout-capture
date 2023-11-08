@@ -33,7 +33,7 @@ ___
 ___
 
 ## Versionfile(1.2.3.4) works as follows: 
-1. Major release
-2. Minor release
-3. Build version of minor release.
-4. Balance version. During development will be updated regularly until everything is up to date with the current patch. Afterward should update once per patch unless undocumented changes are found.
+1. Major release. A Major update means a significant change or large feature that was added. e.g. once the twitch overlay is working the version would probably switch to 1.x
+2. Minor release. A Minor update means a small feature was added to the codebase. This number resets to 0 upon a major release.
+3. Build version of minor release. A Build update means that no features were added, but a bugfix was performed. this number resets to 0 upon a minor or major release.
+4. Balance version. During development will be updated regularly until everything is up to date with the current patch. Afterward should update once per patch unless undocumented changes are found, or when information is restructured. This number will not reset and keep counting up over releases.
