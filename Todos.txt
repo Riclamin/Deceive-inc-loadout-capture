@@ -6,4 +6,3 @@ TODOS:
 
 Maybe:
 - Add support for disguise tier + extra info. 
-V chatbot integration (Firebot?)

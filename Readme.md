@@ -13,12 +13,22 @@
 
 1. Open Windows powershell or Commandprompt in the current directory, which can be done by shift-rightclicking the background in the directory and run:
     - `& python main.py`
+    - Since version 0.3 balance updates are automatically downloaded whenever an update is pushed. The script will also inform you if there is a new major, minor or build release, but you'll have to download it from the github page yourself.
 2. Run a Firebot instance on the pc where you play deceive inc. 
 3. Use any of the following keybinds:
     - ctrl+u During agent select, whenever you use a new build, make sure that you select the agent's class before (vanguard/tracker/disruptor/scoundrel) pressing ctrl+u to have the plugin analyse it. Otherwise it might not detect your weapon/expertise/passive. It will screenshot your current screen and determine your loadout. This can take up to about 10 seconds, but the process isn't blocking, so you can do other stuff in the mean time. It will then export this loadout to the file "CurrentLoadout.txt". A bot can read from this file so that the information can be exported in chat through a chatbot for example.
     - ctrl+i will export a random loadout to the "randomLoadout.txt" file. This could be used for a challenge run for example. It will randomise all aspects of a loadout including agent, weapon, expertise, passive, gadgets, chips. 
     - ctrl+l (lowercase L) to do a lookup for a specific ability. The Firebot setup has a command !DeceiveLookup that uses this keybind to read from the "DeceiveLookup.txt" file. It will try to determine what is being asked and output the result back into the file. The same file can then be read again by the chatbot to output the response into chat. 
 4. To stop the script, go to the powershell / commandprompt window and press ctrl+c to stop the script.
+
+___
+
+## known limitations:
+Current loadout capture has some limitations. Most of these can be circumvented by using the lookup feature instead. However known limitations are:
+- Currently assumes the game is being played at 1080p. Higher or lower resolutions may fail the loadout to be captured as the pixels are different than what is currently analysed in "assets".
+- Assumes the game is being played without colourblind settings, or other settings that changes the colour of pixels. This will reduce the similarity between the assets and what is captured and likely result in the assets not being recognised. 
+
+If there are any accessability issues currently not being considered, please let me know! Contact information is down below.
 
 ___
 
@@ -29,6 +39,12 @@ ___
 ### Considering:
 - Add support for disguise tier + extra info. 
 - Replacing the screen capture with API calls, so that everything can be run in the cloud instead. Requires help from the game developer. 
+
+If you have any other features that you would love to see, please let me know! Contact information is down below.
+___
+
+## Contact information
+If you want to get in touch with me the easiest way to do that is through the issues board here on github (https://github.com/Riclamin/Deceive-inc-loadout-capture/issues) or by letting me known on discord (@Riclamin). It may not be possible to send me a direct message on Discord if we don't share a server such as the official deceive inc discord (https://discord.com/invite/YfYGgjtsYc). 
 
 ___
 
