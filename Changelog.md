@@ -1,3 +1,6 @@
+## 0.4.1.4: 11 Nov 2023
+- Updated the firebot setup to actually reflect the changes in this minor release.
+
 ## 0.4.0.4: 11 Nov 2023
 - The Lookup command suffered from the fact that the script did not take a consistent amount of time to retrieve the answer in time for firebot. This sometimes led to the situation where firebot would assume an answer was ready and replied with the query instead. Twitch user @Nescauzitos suggested to change the setup so that a program is run instead. Another issue with the previous setup was that the keybinds required ctrl. Since this is the standard keybind for most gamers to crouch, this could cause the lookup to randomly make you crouch. This is resolved through the following changes:
     - LoadoutRandom.bat and GenerateRandomLoadout.py now generate a random loadout
