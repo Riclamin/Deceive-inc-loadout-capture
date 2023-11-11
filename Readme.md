@@ -1,16 +1,26 @@
 ## Preparation:
 1. Make sure to have python installed on your pc. Can be downloaded from: https://www.python.org/downloads/
 2. Install the required libraries using command:
-    - `pip install pyautogui pandas keyboard`
+    - `pip install pyautogui pandas keyboard opencv-python`
     - pyautogui is used to capture the screen.
     - pandas is used to easily read the csv files that contain the information.
     - keyboard is to listen to keybinds.
+    - opencv-python is used to make sure the locating is done with a certain confidence score.
 3. Setup a chatbot to read the output file. 
     - A setup file is included for firebot (https://firebot.app): "Deceive loadout extension - firebot integration", which can be imported through `settings > setups > import setup`. During the import of the setup file, you will be asked to give the filepath to the directory where this file is located as well. e.g. C:\Users\User\Documents\Deceive-Inc-Loadout-Capture. If you've already imported a previous version of the setup, I advise to first remove this setup through `settings > setups > remove setup` before importing the new one. 
     - If you're not using Firebot, there is a templateLoadoutFile included that explains shortly on which line of the "CurrentLoadout.txt" file each of the information will be exported.
+4. Update the python location in the .bat files: loadout.bat, loadoutRandom.bat, and lookup.bat, as well as the location of the current folder
+    - The standard location for python is already included in the files (C:/Python39/python.exe )
 
 ## How to use:
+### versions 0.4 and after:
+1. Run a Firebot instance on the pc where you play deceive inc
+    - The firebot commands trigger the correct script to run for loadout capture, as well as performing lookups. To reduce stress on the gaming pc in a dual-pc setup, one could do a small optimisation by disabling the lookup command on the gaming pc and enable the command on the streaming pc. 
+    - Scripts automatically check for Balance updates, and terminate afterwards, minimising the usage of cpu. The results are written back to file, which the chatbot will then read. 
+    - To capture the current loadout, a hotkey can be selected in firebot to read the Loadout.bat program. ctrl u is included in the setup. 
 
+
+### versions 0.3 and before:
 1. Open Windows powershell or Commandprompt in the current directory, which can be done by shift-rightclicking the background in the directory and run:
     - `& python main.py`
     - Since version 0.3 balance updates are automatically downloaded whenever an update is pushed. The script will also inform you if there is a new major, minor or build release, but you'll have to download it from the github page yourself.

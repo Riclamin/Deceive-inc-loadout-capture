@@ -1,3 +1,13 @@
+## 0.4.0.4: 11 Nov 2023
+- The Lookup command suffered from the fact that the script did not take a consistent amount of time to retrieve the answer in time for firebot. This sometimes led to the situation where firebot would assume an answer was ready and replied with the query instead. Twitch user @Nescauzitos suggested to change the setup so that a program is run instead. Another issue with the previous setup was that the keybinds required ctrl. Since this is the standard keybind for most gamers to crouch, this could cause the lookup to randomly make you crouch. This is resolved through the following changes:
+    - LoadoutRandom.bat and GenerateRandomLoadout.py now generate a random loadout
+    - Loadout.bat and CaptureLoadout.py now handle the capturing of the current loadout and write to file.
+    - Lookup.bat and DeceiveLookup.py now handle the lookup. 
+
+### Balance changes
+- Courtesy of Discord user @1stGlitch, the agent section of the balance sheet have been updated with a lot of information.
+
+
 ## 0.3.3.3: 08 Nov 2023
 - Fixed a bug where the dynamically read lists would include the backup values. Upon analysing the current loadout, this would result in the script trying to read files that did not exist.
 - optimised a small section of code that minimised the names for easier comparison.
