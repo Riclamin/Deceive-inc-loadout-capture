@@ -1,3 +1,7 @@
+## 0.4.2.4 12 Nov 2023
+- Resolved a bug in DeceiveLookup.py, where an import was missing from the minor release build, resulting in nothing being looked up. 
+
+
 ## 0.4.1.4: 11 Nov 2023
 - Updated the firebot setup to actually reflect the changes in this minor release.
 

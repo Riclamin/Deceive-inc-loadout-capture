@@ -1,6 +1,6 @@
 import os, pandas, sys
 from checkForUpdates import check_for_updates
-from LoadData import localDirectory, AgentStatsDF, DictionaryDF, GadgetStatsDF, UpgradeChipStatsDF, Agents, Weapons, Expertises, Passives, Gadgets, UpgradeChips, Dictionary
+from LoadData import localDirectory, AgentStatsDF, DictionaryDF, GadgetStatsDF, UpgradeChipStatsDF, Agents, Weapons, Expertises, Passives, Gadgets, UpgradeTiers, UpgradeChips, Dictionary
 
 check_for_updates()
 

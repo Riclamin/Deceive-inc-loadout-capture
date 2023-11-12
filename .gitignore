@@ -4,3 +4,4 @@ DeceiveLookup.txt
 DeceiveLookupLog.txt
 DeceiveLookupResult.txt
 main.py
+__pycache__/
