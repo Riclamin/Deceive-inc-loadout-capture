@@ -1,3 +1,13 @@
+## 0.5.0.5 16 Nov 2023
+- Added the "UpdateCurrentLoadout.py" script to update a currentloadout file using a command. 
+- removed unnecessary imports from CaptureLoadout.py
+- moved determine_likeness function to LoadData.py to reuse the logic instead of implementing it twice in different locations.
+
+
+### Balance changes
+- Added descriptions for each tier of the npcs to the Dictionary. 
+- Added descriptions for catgirl-tech as well as shield-juggling.
+
 ## 0.4.2.4 12 Nov 2023
 - Resolved a bug in DeceiveLookup.py, where an import was missing from the minor release build, resulting in nothing being looked up. 
 

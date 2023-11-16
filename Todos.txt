@@ -1,8 +1,11 @@
 TODOS:
 - Write backend for twitch extension server hosting
-- add customisable hotkeys
-- create gui?
-- add notification that capture succeeded?
+- Make it so commands updated in the firebot setup can be customised and reflect this in possible error messages.
 
 Maybe:
-- Add support for disguise tier + extra info. 
+- Add support for disguise tier. 
+
+Removed
+- create gui? - Not useful anymore since the scripts are run separately.
+- add customisable hotkeys - possible through Firebot since 0.4
+- add notification that capture succeeded - not useful anymore since update commands in 0.5

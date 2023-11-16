@@ -3,5 +3,6 @@ randomLoadout.txt
 DeceiveLookup.txt
 DeceiveLookupLog.txt
 DeceiveLookupResult.txt
+UpdateLoadout.txt
 main.py
 __pycache__/

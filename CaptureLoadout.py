@@ -1,6 +1,6 @@
-import pandas, os, pyautogui
+import pyautogui
 from checkForUpdates import check_for_updates
-from LoadData import localDirectory, AgentStatsDF, GadgetStatsDF, UpgradeChipStatsDF, Agents, Weapons, Expertises, Passives, Gadgets, UpgradeTiers, UpgradeChips, Dictionary
+from LoadData import localDirectory, AgentStatsDF, GadgetStatsDF, UpgradeChipStatsDF, Agents, Weapons, Expertises, Passives, Gadgets, UpgradeTiers, UpgradeChips
 
 
 def main():

@@ -1,6 +1,6 @@
 import os, pandas, sys
 from checkForUpdates import check_for_updates
-from LoadData import localDirectory, AgentStatsDF, DictionaryDF, GadgetStatsDF, UpgradeChipStatsDF, Agents, Weapons, Expertises, Passives, Gadgets, UpgradeTiers, UpgradeChips, Dictionary
+from LoadData import localDirectory, AgentStatsDF, DictionaryDF, GadgetStatsDF, UpgradeChipStatsDF, Agents, Weapons, Expertises, Passives, Gadgets, UpgradeTiers, UpgradeChips, Dictionary, determine_likeness
 
 check_for_updates()
 
@@ -10,24 +10,13 @@ def write_lookup_to_file(result):
         lookupFile.writelines([result])
 
 
-def determine_likeness(name, options):
-    for option in options:
-        minimised_name = minimise_name(name)
-        minimised_option = minimise_name(option)
-        if minimised_name in minimised_option or minimised_option == minimised_name: 
-            return option
-    return None
-
-
-def minimise_name(name: str):
-    return name.replace(' ', '').replace('-', '').replace('\n','').lower()
-
 
 def lookup(args: [str]):
-    with open(f'{localDirectory}\\DeceiveLookupLog.txt', "a+") as log:
-        log.write(f'{args}')
-        log.write('\n')
-        log.flush
+    # Debugging: 
+    # with open(f'{localDirectory}\\DeceiveLookupLog.txt', "a+") as log:
+    #     log.write(f'{args}')
+    #     log.write('\n')
+    #     log.flush
 
 
     Agent = None
@@ -98,16 +87,14 @@ def main():
     with open(f'{localDirectory}\\DeceiveLookup.txt', "r") as lookupFile:
         args = lookupFile.readline().split()
 
-    with open(f'{localDirectory}\\DeceiveLookupLog.txt', "a+") as log:
-        log.write(f'{args}')
-        log.write('\n')
+
+    #Debugging:
+    # with open(f'{localDirectory}\\DeceiveLookupLog.txt', "a+") as log:
+    #     log.write(f'{args}')
+    #     log.write('\n')
 
     lookup(args)
 
-
-print(minimise_name("Yu-Mi"))
-print(minimise_name('yumi'))
-print(determine_likeness('yumi', ["Yu-Mi"]))
 
 
 main()

@@ -19,3 +19,14 @@ UpgradeChips = UpgradeChipStatsDF.index.values.tolist()[1:-1]
 Dictionary = DictionaryDF.index.values.tolist()[1:-1] 
 
 
+def determine_likeness(name, options):
+    for option in options:
+        minimised_name = minimise_name(name)
+        minimised_option = minimise_name(option)
+        if minimised_name in minimised_option or minimised_option == minimised_name: 
+            return option
+    return None
+
+
+def minimise_name(name: str):
+    return name.replace(' ', '').replace('-', '').replace('\n','').replace('"', '').lower()
