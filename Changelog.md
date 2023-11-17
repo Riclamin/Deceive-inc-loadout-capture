@@ -1,3 +1,7 @@
+## 0.5.1.5 17 Nov 2023
+- As per usual, forgot to include the firebot setup to include the commands..
+
+
 ## 0.5.0.5 16 Nov 2023
 - Added the "UpdateCurrentLoadout.py" script to update a currentloadout file using a command. 
 - removed unnecessary imports from CaptureLoadout.py
