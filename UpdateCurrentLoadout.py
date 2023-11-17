@@ -31,10 +31,11 @@ def main():
     # !UpdateLoadout "tobeUpdated"="WhatItShouldBe" ... ... 
     updates = command.split()
 
+    oldAgentLoadout = currentLoadout[0].split(', ')[0].split()
     Agent = currentLoadout[3].strip('\n')
-    Weapon = None
-    Expertise = None
-    Passive = None
+    Weapon = oldAgentLoadout[1]
+    Expertise = oldAgentLoadout[2]
+    Passive = oldAgentLoadout[3]
     Gadget1 = None
     Gadget2 = None
     greyName = None
@@ -112,7 +113,7 @@ def main():
     if Agent is not None:
         currentLoadout[3]= (f'{Agent}\n')
     
-    if Weapon is not None:
+    if Weapon is not None or Agent is not None:
         currentLoadout[4]= (f'{AgentStatsDF.at[Agent, Weapon]}\n')
     
     if Expertise is not None:

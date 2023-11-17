@@ -1,3 +1,7 @@
+## 0.5.2.5 17 Nov 2023
+- When an agent was changed, the respective weapon expertise, and passives weren't correctly updated. This should now be resolved.
+- Updated the Readme to give examples of the !UpdateLoadout command.
+
 ## 0.5.1.5 17 Nov 2023
 - As per usual, forgot to include the firebot setup to include the commands..
 

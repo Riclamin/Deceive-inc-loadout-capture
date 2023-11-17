@@ -17,7 +17,12 @@
 1. Run a Firebot instance on the pc where you play deceive inc
     - The firebot commands trigger the correct script to run for loadout capture, as well as performing lookups. To reduce stress on the gaming pc in a dual-pc setup, one could do a small optimisation by disabling the lookup command on the gaming pc and enable the command on the streaming pc. 
     - Scripts automatically check for Balance updates, and terminate afterwards, minimising the usage of cpu. The results are written back to file, which the chatbot will then read. 
-    - To capture the current loadout, a hotkey can be selected in firebot to read the Loadout.bat program. ctrl u is included in the setup. 
+    - To capture the current loadout, a hotkey can be selected in firebot to execute the Loadout.bat program. ctrl u is included in the setup. 
+    - The update command works by using the command followed by a list of things that need to be updated. It is important that each update does not contain any spaces, because I separate the update arguments based on their grouping. Similar to how the lookup works, as long as the argument can be uniquely identified to a part of the loadout, it should work. The order of the commands is irrelevant. You can update any amount of parts of the loadout by separating each update with spaces. It is possible to make an invalid loadout by assigning one gadget to both slots or one chip to multiple tiers, so you do need to pay attention to that. examples: 
+        - you want "a" to be updated to "b" and "c" updated to "d" then you would run !UpdateLoadout a=b c=d.
+        - !UpdateLoadout grey=Field; since Field agent kit has spaces, only Field is given or the latter part would be interpreted as a separate update
+        - !UpdateLoadout g1=Turret g2=Scrambler
+        - A full loadout change could look like: !UpdateLoadout Agent=Chavez w=w3 e=e2 p=p3 g1=bounce g2=glass grey=cover blue=bulletproof green=extraction purple=field gold=supplement
 
 
 ### versions 0.3 and before:
