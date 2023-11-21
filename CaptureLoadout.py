@@ -14,7 +14,6 @@ def main():
     loadout = lookup_chips(screenshot, loadout)
     loadout = lookup_agent_loadout(screenshot, loadout)
     export_loadout_to_text_file(loadout)
-    #TODO: Notify user?
 
 
 
@@ -26,13 +25,12 @@ def lookup_gadgets(screenshot, loadout):
             (x, y, w,h) = pyautogui.locate(needleImage=f'{localDirectory}\Assets\Gadgets\{gadget}.png', 
                                     haystackImage=screenshot,
                                     confidence=0.95)
-            print(f'Found {gadget} on screen at {x}, {y}')
+            # print(f'Found {gadget} on screen at {x}, {y}')
             if x < 139:
                 loadout["Gadget1"] = gadget
             elif x > 139:
                 loadout["Gadget2"] = gadget
-            else:
-                print("PANIC!")
+
         except:
             # print(f'Did not find {gadget}')
             pass
@@ -62,7 +60,7 @@ def lookup_chips(screenshot, loadout):
                 pass
     
     # Debugging:
-    print(f'Grey = {loadout["UpgradeGrey"]}, Green = {loadout["UpgradeGreen"]}, Blue = {loadout["UpgradeBlue"]}, Purple = {loadout["UpgradePurple"]}, Gold = {loadout["UpgradeGold"]}') 
+    # print(f'Grey = {loadout["UpgradeGrey"]}, Green = {loadout["UpgradeGreen"]}, Blue = {loadout["UpgradeBlue"]}, Purple = {loadout["UpgradePurple"]}, Gold = {loadout["UpgradeGold"]}') 
     return loadout
 
 def lookup_agent_loadout(screenshot, loadout):
@@ -102,7 +100,7 @@ def lookup_agent_loadout(screenshot, loadout):
                                  haystackImage=screenshot,
                                  confidence=0.95)
 
-                print(f'{x} {y}, {passive}') #Debugging
+                # print(f'{x} {y}, {passive}') #Debugging
                 # If not found, it will produce ImageNotFoundException and exit this try block.
                 loadout["Passive"] = passive
             except: 

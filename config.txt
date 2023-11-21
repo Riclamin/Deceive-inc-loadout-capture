@@ -1,0 +1,5 @@
+lookupCommand = !DeceiveLookup          # The trigger for your lookup command in your chatbot to lookup some term / agent / stats. 
+Resolution = 1080p                      # The resolution you play the game in. Different resolutions will require different assets. Currently resolutions other than 1080p are not supported.
+CaptureDisguise = True                  # Whether the plugin should capture your current disguise tier. Currently not supported but included for possible future releases. Options: [True, False]
+colourBlindMode = None                  # type of colourblindness. Currently not supported but included for possible future releasees. Options: [None, 'Deuteranopia', 'Protanopia', 'Tritanopia']
+colourBlindIntensity = 0                # Intensity of colourblind filter. Currently not supported but included for possible future releases. Options: [0, 1, ..., 100]

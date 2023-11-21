@@ -1,4 +1,5 @@
 import os, pandas, sys
+from config import lookupCommand
 from checkForUpdates import check_for_updates
 from LoadData import localDirectory, AgentStatsDF, DictionaryDF, GadgetStatsDF, UpgradeChipStatsDF, Agents, Weapons, Expertises, Passives, Gadgets, UpgradeTiers, UpgradeChips, Dictionary, determine_likeness
 
@@ -40,11 +41,12 @@ def lookup(args: [str]):
         Passive = determine_likeness(args[1], Passives)
         chipName = determine_likeness(args[1], UpgradeChips)
 
-    print(f'{Agent}, {Gadget}, {chipTier}, {Term}, {Weapon}, {Expertise}, {Passive}, {chipName}')
+    #Debugging:
+    # print(f'{Agent}, {Gadget}, {chipTier}, {Term}, {Weapon}, {Expertise}, {Passive}, {chipName}')
 
     result = ''
     if len(args) == 0:
-        result = 'For a list of options use !DeceiveLookup Agents / !DeceiveLookup Gadgets / !DeceiveLookup Chips / !DeceiveLookup Dictionary'
+        result = f'For a list of options use {lookupCommand} Agents / {lookupCommand} Gadgets / {lookupCommand} Chips / {lookupCommand} Dictionary'
     elif len(args) >= 1:
         #Single arguments
         if args[0] == 'Agents':
@@ -77,7 +79,7 @@ def lookup(args: [str]):
 
 
     if result == '':
-        result = 'Did not recognise argument. For a list of options use !DeceiveLookup Agents / !DeceiveLookup Gadgets / !DeceiveLookup Chips / !DeceiveLookup Dictionary'
+        result = f'Did not recognise argument. For a list of options use {lookupCommand} Agents / {lookupCommand} Gadgets / {lookupCommand} Chips / {lookupCommand} Dictionary'
     write_lookup_to_file(result)
 
 

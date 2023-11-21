@@ -1,6 +1,5 @@
 TODOS:
-- Write backend for twitch extension server hosting
-- Make it so commands updated in the firebot setup can be customised and reflect this in possible error messages.
+- for 1.0 release: Write backend for twitch extension server hosting
 
 Maybe:
 - Add support for disguise tier. 

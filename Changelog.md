@@ -1,6 +1,19 @@
+## 0.6.0.6 21 Nov 2023
+- added a config file so that users can insert their own name for the lookup command. There are some more options included in the config file that are currently not used, but may be used in the future.
+- Update the firebot setup file to reflect above change. 
+- commented out more of the debugging functions that are now not visible during normal use anyways. 
+
+
+### Balance changes
+- In cooperation with Steam user Aevian Milotic333 we timed and tested most expertises to find missing numbers. As a result the AgentLoadout text for expertises and passives have been updated.
+- Added some missing text to GadgetStats sheet.
+
+___
+
 ## 0.5.2.5 17 Nov 2023
 - When an agent was changed, the respective weapon expertise, and passives weren't correctly updated. This should now be resolved.
 - Updated the Readme to give examples of the !UpdateLoadout command.
+
 
 ## 0.5.1.5 17 Nov 2023
 - As per usual, forgot to include the firebot setup to include the commands..
@@ -15,6 +28,8 @@
 ### Balance changes
 - Added descriptions for each tier of the npcs to the Dictionary. 
 - Added descriptions for catgirl-tech as well as shield-juggling.
+
+___
 
 ## 0.4.2.4 12 Nov 2023
 - Resolved a bug in DeceiveLookup.py, where an import was missing from the minor release build, resulting in nothing being looked up. 
@@ -32,6 +47,7 @@
 ### Balance changes
 - Courtesy of Discord user @1stGlitch, the agent section of the balance sheet have been updated with a lot of information.
 
+___
 
 ## 0.3.3.3: 08 Nov 2023
 - Fixed a bug where the dynamically read lists would include the backup values. Upon analysing the current loadout, this would result in the script trying to read files that did not exist.
