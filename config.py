@@ -2,7 +2,7 @@ from LoadData import localDirectory
 
 
 configLines = []
-with open ('{localDirectory}\\config.txt', 'r+') as config:
+with open (f'{localDirectory}\\config.txt', 'r+') as config:
     configLines = config.readlines()
 
 

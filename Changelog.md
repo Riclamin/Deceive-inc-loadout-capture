@@ -1,3 +1,8 @@
+## 0.6.1.6 05 Dec 2023
+- There was a bug in config.py that prevented the file from being executed; and therefore none of the scripts would work either.
+- Updated the readme to reflect some part of the setup that is not automatically updated for some reason. 
+
+
 ## 0.6.0.6 21 Nov 2023
 - added a config file so that users can insert their own name for the lookup command. There are some more options included in the config file that are currently not used, but may be used in the future.
 - Update the firebot setup file to reflect above change. 
