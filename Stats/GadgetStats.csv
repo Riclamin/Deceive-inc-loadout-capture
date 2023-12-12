@@ -1,11 +1,11 @@
 Gadget;Stats;x
-BounceMat;Places a bounce pad that can bounce you and others upwareds. Cooldown: 60s on destroy or 0s if picked back up.;x
+BounceMat;Places a bounce pad that can bounce you and others upwards. Auto deflates after 1s. Cannot be reinflated after inflation for xs. Cooldown: 60s on destroy or 0s if picked back up.;x
 GooPod;Places a device that creates goo slowing everyone in the area by 30%. Device can be destroyed. Cooldown: 30s or 0s on pickup.;x
 HackTrap;Traps any electronic device. If an opposing spy interacts with the device a snapshot will be revealed for 10s and grants you 3 intel. Can have 6 traps up at the same time. Placing a new one when 6 are in use will remove the oldest trap.;x
 Holo-Mimic;Scan an object with the primary action key. When not being scolded transform into this object with your secondary action key.;x
 ReconDrone;Can shoot tracker darts that travel for 100m hand held using primary action key. Secondary action key will deploy the drone (has 1hp) and allows you to fly it. Your agent will continue doing what they were doing when it was deployed. You can alternate control back to your agent using the secondary action key. Tracks for 12s. Cooldown: 30 cd on destruction, 0s on pickup.;x
 Scrambler;Disables all other gadgets within 15m while activated. Electronic devices within the range cannot be hacked while its active. Can be placed down. Cooldown: 30s on destruction or 0s on pickup.;x
-Shield-Brella;Can be used in handheld mode to block 50 hp or deployed on the ground to block 100 hp. Deployed Shield-brella have a weak spot which will immediately destroy it and can be picked back up.;x
+Shield-Brella;Can be used in handheld mode to block 50 hp or deployed on the ground to block 100 hp. Deployed Shield-brella have a weak spot which will immediately destroy it and can be picked back up. ;x
 Spyglass;Can be used to interact with electronic devices from afar (not health stations / ammo dispensers). Can also be used to revive teammates.;x
 Tripwire;Place down a tripwire beacon which connects to all other tripwire beacons within 8m. When an enemy walks through the tripwire they lose their cover and are traced for 5s.;x
 Turret;Place down a turret that shoots a bullet every .4s for 3 dmg (7.5 dps). Turret has 25 hp. Turret can be picked up for 0s cd or has 30s cd if destroyed.;x

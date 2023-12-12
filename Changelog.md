@@ -1,3 +1,8 @@
+## 0.6.1.7 12 Dec 2023
+### Balance Changes
+- Updated all stats to reflect the patch notes.
+
+
 ## 0.6.1.6 05 Dec 2023
 - There was a bug in config.py that prevented the file from being executed; and therefore none of the scripts would work either.
 - Updated the readme to reflect some part of the setup that is not automatically updated for some reason. 

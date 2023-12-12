@@ -12,7 +12,7 @@ Traced;The player that applied the status effect is able to see the traced playe
 Revealed;Is completely identical to traced, except it does not have a duration: it is based on a toggle mechanic. Applied by: the briefcase holder's ability. 
 Broadcast;Regularly pings the player's position for everyone on the map, without showing aura, cover, agent, etc. Applied by: Briefcase Room (if not disguised as a VIP)
 Exposed;Prevents the player from getting their cover back. Note: cover drain and cover break do not apply exposed, but respectively slowly drain your cover and break it ont he spot. Applied by: Yu-Mi's E1 and E3, Ace's P3 and the Briefcase Room (if not disguised as a VIP), Octo'/s E3 if rival is out of cover, and reaching lvl 3 heat. 
-Neutralized;It prevents the player from using their expertise. Applied by: Hans' E1 and E3, Octo'/s E3 if rival is out of cover.
+Neutralized;It prevents the player from using their expertise. Applied by: Hans' E1 and E3, Octo's E3 if rival is out of cover.
 Charmed;Restores cover to Rivals and applies this status. If a rival breaks their cover while charmed they become heartbroken. Applied by: Red E1 and E3. 
 Heartbroken;Applies Neutralized and Vulnerable. Applied by: Red E1 and E3.
 Invisible;Renders the user completely invisble and immune to detection and damage by any means. Applied by: Larcin's expertises (E1, E2, E3).
