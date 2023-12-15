@@ -1,3 +1,21 @@
+## 0.7.0.8 15 Dec 2023 
+- Updated the loadout capture logic so that future lobby changes should not affect capture accuracy
+- Added support for 1440p capturing (Make sure to update your config file).
+    - included all assets for 1440p, and moved the 1080p assets to a different folder.
+
+
+
+
+## 0.6.2.8 15 Dec 2023
+- Fixed an error in the update command where it would update all chips to be of 'grey' tier, even though ti did show the correct values.
+
+
+### Balance Changes
+- Added cooldown for tripwires and shieldbrella.
+- Added the fact that technicians can now open drawers.
+- Added Ace p3 to list of abilities that can neutralize.
+- included updated bounce pad cooldown from hotfix patch on 14 dec 2023
+
 ## 0.6.1.7 12 Dec 2023
 ### Balance Changes
 - Updated all stats to reflect the patch notes.

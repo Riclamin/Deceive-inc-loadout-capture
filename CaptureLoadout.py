@@ -1,117 +1,11 @@
 import pyautogui
+import cv2
+import numpy as np
+import os
 from checkForUpdates import check_for_updates
+from config import resolution
 from LoadData import localDirectory, AgentStatsDF, GadgetStatsDF, UpgradeChipStatsDF, Agents, Weapons, Expertises, Passives, Gadgets, UpgradeTiers, UpgradeChips
 
-
-def main():
-    check_for_updates()
-    screenshot = pyautogui.screenshot()
-    loadout = {"Agent": None, "Weapon": None, "Expertise": None, "Passive": None, 
-           "Gadget1": None, "Gadget2": None, 
-           "UpgradeGrey": None, "UpgradeGreen": None, "UpgradeBlue": None, "UpgradePurple": None, "UpgradeGold": None}
-
-    loadout = lookup_gadgets(screenshot, loadout)
-    loadout = lookup_chips(screenshot, loadout)
-    loadout = lookup_agent_loadout(screenshot, loadout)
-    export_loadout_to_text_file(loadout)
-
-
-
-def lookup_gadgets(screenshot, loadout):
-    #lookup gadgets.
-    for gadget in Gadgets:
-        try: 
-            #Left gadget is around (89, 492), Right gadget is around (189, 492) --> if x < 139 = left gadget (2) else: right gadget (3)
-            (x, y, w,h) = pyautogui.locate(needleImage=f'{localDirectory}\Assets\Gadgets\{gadget}.png', 
-                                    haystackImage=screenshot,
-                                    confidence=0.95)
-            # print(f'Found {gadget} on screen at {x}, {y}')
-            if x < 139:
-                loadout["Gadget1"] = gadget
-            elif x > 139:
-                loadout["Gadget2"] = gadget
-
-        except:
-            # print(f'Did not find {gadget}')
-            pass
-
-        #If we found 2 gadgets we can stop looking.
-        if (loadout["Gadget1"] is not None ) and (loadout["Gadget2"] is not None):
-            break
-    
-    #Debugging:
-    # print(f'Current gadget loadout: {loadout["Gadget1"]} and {loadout["Gadget2"]}')
-    return loadout
-
-def lookup_chips(screenshot, loadout):
-    #Lookup chips
-    for tier in UpgradeTiers:
-        for chip in UpgradeChips:
-            try: 
-                (x,y,w,h) = pyautogui.locate(needleImage=f'{localDirectory}\Assets\\Upgrades folder\{tier}\{chip}.png',
-                                        haystackImage=screenshot,
-                                        confidence=0.90)
-                # If not found, it will produce ImageNotFoundException and exit this try block.
-                # print (f'chip found at {x}, {y}')
-                loadout[f"Upgrade{tier}"] = chip
-                # print(f'updated {tier} to be {chip}')
-                break
-            except: 
-                pass
-    
-    # Debugging:
-    # print(f'Grey = {loadout["UpgradeGrey"]}, Green = {loadout["UpgradeGreen"]}, Blue = {loadout["UpgradeBlue"]}, Purple = {loadout["UpgradePurple"]}, Gold = {loadout["UpgradeGold"]}') 
-    return loadout
-
-def lookup_agent_loadout(screenshot, loadout):
-    #Lookup agent + loadout.
-    for agent in Agents:
-        for weapon in Weapons:
-            # print(f'testing {agent}, {weapon}')
-            try: 
-                (x, y, w, h) = pyautogui.locate(needleImage=f'{localDirectory}\Assets\Agents\{agent}\{weapon}.png',
-                                        haystackImage=screenshot,
-                                        confidence=0.95)
-                # print(f'{x} {y}, {agent} {weapon}') #Debugging
-                # If not found, it will produce ImageNotFoundException and exit this try block.
-                loadout["Weapon"] = weapon
-                loadout["Agent"] = agent
-            except: 
-                pass
-        
-        #If we didn't find any of the weapons of this agent, then there is no use in continuing to look for their expertises/passives.
-        if loadout["Weapon"] is None:
-            continue
-
-        for expertise in Expertises:
-            try: 
-                (x, y, w, h) = pyautogui.locate(needleImage=f'{localDirectory}\Assets\Agents\{agent}\{expertise}.png', 
-                                        haystackImage=screenshot,
-                                        confidence=0.95)
-                # print(f'{x} {y}, {expertise}') #Debugging
-                # If not found, it will produce ImageNotFoundException and exit this try block.
-                loadout["Expertise"] = expertise
-            except: 
-                pass
-
-        for passive in Passives:
-            try: 
-                (x, y, w, h) = pyautogui.locate(needleImage=f'{localDirectory}\Assets\Agents\{agent}\{passive}.png', 
-                                 haystackImage=screenshot,
-                                 confidence=0.95)
-
-                # print(f'{x} {y}, {passive}') #Debugging
-                # If not found, it will produce ImageNotFoundException and exit this try block.
-                loadout["Passive"] = passive
-            except: 
-                pass
-        
-        # Found weapon, expertise and passive, can stop looking at other agents:
-        break
-
-    #Debugging:
-    # print(f'Agent = {loadout["Agent"]}, weapon = {loadout["Weapon"]}, expertise = {loadout["Expertise"]}, passive = {loadout["Passive"]}')
-    return loadout
 
 def export_loadout_to_text_file(loadout: dict):
     # print(loadout) #Debugging
@@ -143,4 +37,176 @@ def export_loadout_to_text_file(loadout: dict):
 
 
 
+
+def lookup_agent_loadout(screenshot, loadout):
+    screenshot = cv2.imread(screenshot)
+    for agent in Agents:
+        weaponFound = False
+        for weapon in Weapons:
+            print(f'testing {agent} {weapon}')
+            template = cv2.imread(f'{localDirectory}\Assets\{resolution}\Agents\{agent}\{weapon}.png', cv2.IMREAD_UNCHANGED)
+            base = template[:,:,0:3]
+            alpha = template[:,:,3]
+            alpha = cv2.merge([alpha,alpha,alpha])
+
+            correlation = cv2.matchTemplate(screenshot, base, cv2.TM_CCORR_NORMED, mask=alpha)
+            threshhold =1
+            loc = np.where(correlation >= threshhold)
+            if len(loc) >0:
+                for pt in zip(*loc[::-1]):
+                    print(f'found in {len(loc)} place(s)')
+                    loadout["Weapon"] = weapon
+                    loadout["Agent"] = agent
+                    weaponFound = True
+                    break
+            
+            if weaponFound:
+                break
+        
+        if loadout["Agent"] == None: # Means we didn't find a weapon for the current agent, so we also won't find expertise and passive.
+            continue
+        
+        expertiseFound = False
+        for expertise in Expertises:
+            print(f'testing {agent} {expertise}')
+            template = cv2.imread(f'{localDirectory}\Assets\{resolution}\Agents\{agent}\{expertise}.png', cv2.IMREAD_UNCHANGED)
+            base = template[:,:,0:3]
+            alpha = template[:,:,3]
+            alpha = cv2.merge([alpha,alpha,alpha])
+
+            correlation = cv2.matchTemplate(screenshot, base, cv2.TM_CCORR_NORMED, mask=alpha)
+            threshhold =0.999
+            loc = np.where(correlation >= threshhold)
+            if len(loc) >0:
+                for pt in zip(*loc[::-1]):
+                    loadout["Expertise"] = expertise
+                    expertiseFound = True
+                    break
+
+            if expertiseFound:
+                break
+        
+        passiveFound = False
+        for passive in Passives:
+            print(f'testing {agent} {passive}')
+            template = cv2.imread(f'{localDirectory}\Assets\{resolution}\Agents\{agent}\{passive}.png', cv2.IMREAD_UNCHANGED)
+            base = template[:,:,0:3]
+            alpha = template[:,:,3]
+            alpha = cv2.merge([alpha,alpha,alpha])
+
+            correlation = cv2.matchTemplate(screenshot, base, cv2.TM_CCORR_NORMED, mask=alpha)
+            threshhold =0.999
+            loc = np.where(correlation >= threshhold)
+            if len(loc) >0:
+                for pt in zip(*loc[::-1]):
+                    loadout["Passive"] = passive
+                    passiveFound = True
+                    break
+            
+            if passiveFound:
+                break
+
+    return loadout
+
+
+def lookup_gadgets(screenshot, loadout):
+    #lookup gadgets.
+    screenshot = cv2.imread(screenshot)
+    for gadget in Gadgets:
+
+        #1080p: Left gadget is around (89, 492), Right gadget is around (189, 492) --> if x < 139 = left gadget (2) else: right gadget (3)
+        if (resolution == '1080p'):
+            template = cv2.imread(f'{localDirectory}\Assets\{resolution}\Gadgets\{gadget}.png', cv2.IMREAD_UNCHANGED)
+            base = template[:,:,0:3]
+            alpha = template[:,:,3]
+            alpha = cv2.merge([alpha,alpha,alpha])
+
+            correlation = cv2.matchTemplate(screenshot, base, cv2.TM_CCORR_NORMED, mask=alpha)
+            threshhold = 1
+            loc = np.where(correlation >= threshhold)
+            
+            if len(loc) >0:
+                for pt in zip(*loc[::-1]):
+                    if pt[0] < 139:
+                        loadout["Gadget1"] = gadget
+                    else:
+                        loadout["Gadget2"] = gadget
+                    break
+        
+        #1440p: middle between gadgets is: (179,643)
+        elif (resolution == '1440p'):
+            template = cv2.imread(f'{localDirectory}\Assets\{resolution}\Gadgets\{gadget}.png', cv2.IMREAD_UNCHANGED)
+            base = template[:,:,0:3]
+            alpha = template[:,:,3]
+            alpha = cv2.merge([alpha,alpha,alpha])
+
+            correlation = cv2.matchTemplate(screenshot, base, cv2.TM_CCORR_NORMED, mask=alpha)
+            threshhold =1
+            loc = np.where(correlation >= threshhold)
+            
+            if len(loc) >0:
+                for pt in zip(*loc[::-1]):
+                    if pt[0] < 139:
+                        loadout["Gadget1"] = gadget
+                    else:
+                        loadout["Gadget2"] = gadget
+                    break
+
+        #If we found 2 gadgets we can stop looking.
+        if (loadout["Gadget1"] is not None ) and (loadout["Gadget2"] is not None):
+            break
+    
+    #Debugging:
+    # print(f'Current gadget loadout: {loadout["Gadget1"]} and {loadout["Gadget2"]}')
+    return loadout
+
+def lookup_chips(screenshot, loadout):
+    #Lookup chips
+    screenshot = cv2.imread(screenshot)
+    for tier in UpgradeTiers:
+        chipFound = False
+        for chip in UpgradeChips:
+            print(f'testing {tier}, {chip}')
+            template = cv2.imread(f'{localDirectory}\Assets\{resolution}\\Upgrades Folder\{tier}\{chip}.png', cv2.IMREAD_UNCHANGED)
+            # hh, ww = template.shape[:2]
+            base = template[:,:,0:3]
+            alpha = template[:,:,3]
+            alpha = cv2.merge([alpha,alpha,alpha])
+
+            correlation = cv2.matchTemplate(screenshot, base, cv2.TM_CCORR_NORMED, mask=alpha)
+            threshhold =1
+            loc = np.where(correlation >= threshhold)
+            # result = screenshot.copy()
+            
+            if len(loc) >0:
+                for pt in zip(*loc[::-1]):
+                    loadout[f"Upgrade{tier}"] = chip
+                    chipFound = True
+            
+            if chipFound:
+                break    
+    
+    # Debugging:
+    # print(f'Grey = {loadout["UpgradeGrey"]}, Green = {loadout["UpgradeGreen"]}, Blue = {loadout["UpgradeBlue"]}, Purple = {loadout["UpgradePurple"]}, Gold = {loadout["UpgradeGold"]}') 
+    return loadout
+
+
+
+def main():
+    check_for_updates()
+    screenshot = 'loadout.png'
+    pyautogui.screenshot(screenshot)
+    loadout = {"Agent": None, "Weapon": None, "Expertise": None, "Passive": None, 
+           "Gadget1": None, "Gadget2": None, 
+           "UpgradeGrey": None, "UpgradeGreen": None, "UpgradeBlue": None, "UpgradePurple": None, "UpgradeGold": None}
+
+    loadout = lookup_gadgets(screenshot, loadout)
+    loadout = lookup_chips(screenshot, loadout)
+    loadout = lookup_agent_loadout(screenshot, loadout)
+    print(f'loadout = {loadout}')
+    export_loadout_to_text_file(loadout)
+    os.remove('loadout.png')
+
+
 main()
+
