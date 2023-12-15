@@ -170,16 +170,16 @@ def main():
         fullLoadout[3] = f'grey={greyName}'
 
     if greenName is not None:
-        fullLoadout[4] = f'grey={greenName}'
+        fullLoadout[4] = f'green={greenName}'
 
     if blueName is not None:
-        fullLoadout[5] = f'grey={blueName}'
+        fullLoadout[5] = f'blue={blueName}'
 
     if purpleName is not None:
-        fullLoadout[6] = f'grey={purpleName}'
+        fullLoadout[6] = f'purple={purpleName}'
         
     if goldName is not None:
-        fullLoadout[7] = f'grey={goldName}'
+        fullLoadout[7] = f'gold={goldName}'
 
     fullLoadoutString = ", ".join(fullLoadout).strip('\n') + '\n'
     NoChipsString = ", ".join(fullLoadout[0:3]).strip('\n') + '\n'
