@@ -1,3 +1,7 @@
+## 0.7.1.8 15 Dec 2023
+- Added a minor optimisation to capture agent loadout.
+
+
 ## 0.7.0.8 15 Dec 2023 
 - Updated the loadout capture logic so that future lobby changes should not affect capture accuracy
 - Added support for 1440p capturing (Make sure to update your config file).

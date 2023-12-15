@@ -105,6 +105,9 @@ def lookup_agent_loadout(screenshot, loadout):
             
             if passiveFound:
                 break
+        
+        if loadout["Agent"] is not None:
+            break
 
     return loadout
 
