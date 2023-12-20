@@ -1,3 +1,10 @@
+## 0.7.1.9 20 Dec 2023
+
+### Balance Changes
+- Updated an incorrect number for squire e3.
+- Updated grammar in a sentence for squire p2
+
+
 ## 0.7.1.8 15 Dec 2023
 - Added a minor optimisation to capture agent loadout.
 
