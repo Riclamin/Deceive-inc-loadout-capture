@@ -1,3 +1,9 @@
+## 0.7.1.10 20 Dec 2023
+
+### Balance Changes
+- Included the term spypack, with synonym spycache into the dictionary.
+
+
 ## 0.7.1.9 20 Dec 2023
 
 ### Balance Changes
