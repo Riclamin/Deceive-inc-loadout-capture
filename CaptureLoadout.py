@@ -50,7 +50,7 @@ def lookup_agent_loadout(screenshot, loadout):
             alpha = cv2.merge([alpha,alpha,alpha])
 
             correlation = cv2.matchTemplate(screenshot, base, cv2.TM_CCORR_NORMED, mask=alpha)
-            threshhold =1
+            threshhold = 0.999
             loc = np.where(correlation >= threshhold)
             if len(loc) >0:
                 for pt in zip(*loc[::-1]):
@@ -125,7 +125,7 @@ def lookup_gadgets(screenshot, loadout):
             alpha = cv2.merge([alpha,alpha,alpha])
 
             correlation = cv2.matchTemplate(screenshot, base, cv2.TM_CCORR_NORMED, mask=alpha)
-            threshhold = 1
+            threshhold = 0.999
             loc = np.where(correlation >= threshhold)
             
             if len(loc) >0:
@@ -144,12 +144,12 @@ def lookup_gadgets(screenshot, loadout):
             alpha = cv2.merge([alpha,alpha,alpha])
 
             correlation = cv2.matchTemplate(screenshot, base, cv2.TM_CCORR_NORMED, mask=alpha)
-            threshhold =1
+            threshhold =0.999
             loc = np.where(correlation >= threshhold)
             
             if len(loc) >0:
                 for pt in zip(*loc[::-1]):
-                    if pt[0] < 139:
+                    if pt[0] < 179:
                         loadout["Gadget1"] = gadget
                     else:
                         loadout["Gadget2"] = gadget
@@ -177,7 +177,7 @@ def lookup_chips(screenshot, loadout):
             alpha = cv2.merge([alpha,alpha,alpha])
 
             correlation = cv2.matchTemplate(screenshot, base, cv2.TM_CCORR_NORMED, mask=alpha)
-            threshhold =1
+            threshhold = 1
             loc = np.where(correlation >= threshhold)
             # result = screenshot.copy()
             
