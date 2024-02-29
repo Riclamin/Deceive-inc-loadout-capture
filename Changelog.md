@@ -1,3 +1,11 @@
+## 0.7.2.12 29 Feb 2024
+
+### Balance changes
+- Updated all relevant numbers and effects based on the patch notes that were released on the tripwire forums.
+- Added damage falloff findings to the agent stats as well as the dictionary for an explanation.
+
+
+
 ## 0.7.2.11 13 Feb 2024
 - Reduced the theshold for capturing various assets, as it seemed to be too high of a threshold. This caused failures in the comparing logic, making the plugin think that the asset was not on screen, even when it was.
 - Some 1440p assets got updated during this update, so it's important to also update these if you were having trouble capturing the assets.

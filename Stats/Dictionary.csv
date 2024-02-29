@@ -11,19 +11,20 @@ Vulnerable;Amplifies damage taken by all sources by 30%. Lasts for 25 seconds. N
 Traced;The player that applied the status effect is able to see the traced player including the cover in a red silhouette and through walls. Applied by: Recon Drone, Hacktraps, Cavalière's expertises (E1, E2 and E3) and Squire's P2.
 Revealed;Is completely identical to traced, except it does not have a duration: it is based on a toggle mechanic. Applied by: the briefcase holder's ability. 
 Broadcast;Regularly pings the player's position for everyone on the map, without showing, cover, agent, etc. Applied by: Briefcase Room if cover is broken.
-Exposed;Prevents the player from getting their cover back. Note: cover drain and cover break do not apply exposed, but respectively slowly drain your cover and break it on the spot. Applied by: Yu-Mi's E1 and E3, Ace's P3 and the Briefcase Room, Octo's E3 if rival is out of cover, and reaching lvl 3 heat. 
+Exposed;Prevents the player from getting their cover back. Note: cover drain and cover break do not apply exposed, but respectively slowly drain your cover and break it on the spot. Applied by: Yu-Mi's E1 and E3, Ace's P1 and the Briefcase Room, Octo's E3 if rival is out of cover, and reaching lvl 3 heat. 
 Neutralized;It prevents the player from using their expertise. Applied by: Ace p3, Hans' E1 & E3, Octo's E3 if rival is out of cover.
 Charmed;Restores cover to Rivals and applies this status. If a rival breaks their cover while charmed they become heartbroken. Applied by: Red E1 and E3. 
 Heartbroken;Applies Neutralized and Vulnerable. Applied by: Red E1 and E3.
 Invisible;Renders the user completely invisble and immune to detection and damage by any means. Applied by: Larcin's expertises (E1, E2, E3).
 Amped-Up;Increases movement speed. (Squire E2 increases reload speed as well.) Applied by: Squire E2 & P1, Larcin E1 (to allies) & E3 (Larcin and allies) and Cavaliére's P2.
 Invulnerable;Renders user completely immune to damage from all sources. Applied by: Chavez E1 & E3. 
-Resistant;Reduces incoming damage by 50%. Applied by: Chavez E2, Squire P3, Red P1.
+Resistant;Reduces incoming damage by 25%. Applied by: Chavez E2, Squire P3, Red P1.
+Slowed;Reduces player movement and turning speed by 30%. Applied by: Ace P2, Hans E1,E2,E3,P1,P2, Cavalière P3, Yumi E1, P3, Red E1,E3, Sasori w3 knife.
 Hunted;Applied by Ace' E1: Traces the rival for the duration and shows a path towards them. 
 Steal;Larcin can steal your highest value asset with P1 & P3. It prioritises keycards over chips, and can only steal something the Larcin doesn't already own. If Larcin owns everything he steals 1 intel per attempt up to his intel is at his cap. Octo can also steal/drain intel from his targets with his E2 & E3.
 Extract;Refers to an extraction point, which can be either A, B or C. The terminals can be used to revive dead teammates for 5 intel in team modes.
 Secret Exits;Refers to an alternative exit present in most terminal rooms, opened by interacting with specific objects within the room.
-Heat;You gain heat for damaging npcs. Having level 1/2/3 heat will make it so you receive 30%/50%/100% bonus damage from all sources. Reaching heat level 3 applies 8 seconds of Exposed. It takes 44.5s to decay one full level of heat. Heat only decays while in cover.
+Heat;You gain heat for damaging npcs. Having level 1/2/3 heat will make it so you receive 25%/50%/75% bonus damage from all sources. Guards won't shoot until you've reached heat level 1. At level 2 heat, up to 3 guards will now aggro on you instead of 2. Reaching heat level 3 applies 8 seconds of Exposed. It takes 44.5s to decay one full level of heat. Heat only decays while in cover.
 Snapshot;Upon triggering a hacktrap, you leave a snapshot of the agent your playing and your location for about 10s. This snapshot is visible to the trapper, the victim and both their teams.
 Echo;Similar to Snapshot, except it is only visible to Madame Xiu players with p3 and their team. 
 Civilians;Civilians are the most common npcs that walk around the map. They will not wander into areas they're not supposed to. Civilians don't open drawers, but will interact with other furniture and doors. Will crouch or run away from a fight.
@@ -36,3 +37,6 @@ Catgirl-tech;Catgirl-tech is a technique where you use the handheld Shield-Brell
 Shield-juggling;A tech where you deploy your Shield-Brella shoot a shot of your weapon, pick it back up and quickly put it down somewhere else again. When done well, it provides moving cover that's hard to break, due to the weak point continuously moving.
 Spypack;Synonyms: spycache. Drops when a player is killed or disconnects from the match. Picking it up gives you their intel, ammo, as well as healing for 25 hp.
 Spycache;Synonyms: spypack. Drops when a player is killed or disconnects from the match. Picking it up gives you their intel, ammo, as well as healing for 25 hp.
+Printer;Devices in the vault area that can print golden keycards for the price of 10 intel. The printer takes 30 seconds to print a keycard and can only be used once.
+First Aid Vial;This item can be used for 3 seconds to heal 20 hp. Running, jumping, taking damage or trying to shoot cancels the interactions and cannot be used during invulnerability or invisibility.
+Damage falloff;Weapons lose damage when firing over distances. They get full damage until their specified stat and then lose damage, reaching a minimum 10m after that. Weapons that have a starting falloff of 15m or lower drop down to 50% damage, weapons that start at 20m drop down to 60%, and weapons that start at 25m drop down to 70%.
