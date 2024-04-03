@@ -16,7 +16,7 @@ Passives = ["p1", "p2", "p3"]
 Gadgets = GadgetStatsDF.index.values.tolist()[1:-1] 
 UpgradeTiers = ["Grey", "Green", "Blue", "Purple", "Gold"]
 UpgradeChips = UpgradeChipStatsDF.index.values.tolist()[1:-1] 
-Dictionary = DictionaryDF.index.values.tolist()[1:-1] 
+Dictionary = DictionaryDF.index.values.tolist()[1:] 
 
 
 def determine_likeness(name, options):

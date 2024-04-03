@@ -1,3 +1,15 @@
+## 0.7.3.13 3 April 2024
+- Updated art for Ace's p1 and p3.
+- Some assets got updated during this update, so it's important to also update these if you were having trouble capturing some assets.
+
+
+### Balance changes
+- Updated all balance changes following from the hotfix patch on march 15th.
+- Added health vial / consumable to dictionary
+- added damage falloff explanation to dictionary
+
+
+
 ## 0.7.2.12 29 Feb 2024
 
 ### Balance changes
