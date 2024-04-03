@@ -41,4 +41,4 @@ Printer;Devices in the vault area that can print golden keycards for the price o
 First Aid Vial;Synonyms: Health consumable. This item can be used for 3 seconds to heal 20 hp. Running, jumping, taking damage, trying to shoot or attempting most interactions cancels the heal and cannot be used during invulnerability or invisibility.
 Health consumable;Synonyms: First aid vial. This item can be used for 3 seconds to heal 20 hp. Running, jumping, taking damage, trying to shoot or attempting most interactions cancels the heal and cannot be used during invulnerability or invisibility.
 Damage Falloff;Weapons lose damage when firing over distances. They get full damage until their specified stat and then lose damage, reaching a minimum 10m after that. Weapons that have a starting falloff of 15m or lower drop down to 50% damage, weapons that start at 20m drop down to 60%, and weapons that start at 25m drop down to 70%.
-Love;Jati
+Love;Jati (Baby, don't hurt me)
