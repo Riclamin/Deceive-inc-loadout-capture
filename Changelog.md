@@ -1,3 +1,10 @@
+## 0.7.3.14 13 April 2024
+
+### Balance changes
+- updated values according to the patch notes of 11 April 2024: https://forums.tripwireinteractive.com/index.php?threads/jatimania-is-here.2340232/
+
+
+
 ## 0.7.3.13 3 April 2024
 - Updated art for Ace's p1 and p3.
 - Some assets got updated during this update, so it's important to also update these if you were having trouble capturing some assets.
