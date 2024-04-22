@@ -1,3 +1,10 @@
+## 0.7.3.15 22 April 2024
+
+### Balance changes
+- updated values according to the hotfix patch notes of 22 April 2024: https://forums.tripwireinteractive.com/index.php?threads/jatimania-hotfix.2340245/
+
+
+
 ## 0.7.3.14 13 April 2024
 
 ### Balance changes
