@@ -1,3 +1,11 @@
+## 0.7.3.17 18 June 2024
+
+### Balance changes
+- Added vigil and all her stats to the balance sheet, including the Bugged status effect that comes with her passives.
+- Included changes from the catalog 4 patchhttps://forums.tripwireinteractive.com/index.php?threads/deceive-inc-catalog-4-patch-notes-world%E2%80%99s-finest-update.2340322/
+- Immediately updated values to the hotpatch numbers of https://forums.tripwireinteractive.com/index.php?threads/world%E2%80%99s-finest-hotfix.2340351/
+
+
 ## 0.7.3.16 08 May 2024
 
 ### Balance changes

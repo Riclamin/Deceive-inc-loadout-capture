@@ -42,3 +42,5 @@ First Aid Vial;Synonyms: Health consumable. This item can be used for 3 seconds 
 Health consumable;Synonyms: First aid vial. This item can be used for 3 seconds to heal 20 hp. Running, jumping, taking damage, trying to shoot or attempting most interactions cancels the heal and cannot be used during invulnerability or invisibility.
 Damage Falloff;Weapons lose damage when firing over distances. They get full damage until their specified stat and then lose damage, reaching a minimum 10m after that. Weapons that have a starting falloff of 15m or lower drop down to 50% damage, weapons that start at 20m drop down to 60%, and weapons that start at 25m drop down to 70%.
 Love;Jati don't hurt me, don't hurt me, no more
+Bugged;This effect does nothing by itself, it only is there to indicate that a vigil stuck their sonar or proximity mine on you. 
+Holocrumb;A marker you leave behind upon changing cover. It will be blue for allies changing cover, and red for rivals changing cover. It remains there for 15s.
